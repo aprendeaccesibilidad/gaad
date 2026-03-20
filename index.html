@@ -1,597 +1,641 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GAAD 2026 · Evento con conferencias invitadas</title>
-  <meta name="description" content="Evento GAAD 2026 (Global Accessibility Awareness Day) con conferencias invitadas, agenda, accesibilidad y registro." />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jorana sobre el Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida</title>
+  <meta name="description" content="Jornada sobre el Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida. Detalles del evento, programa y registro con inscripción previa.">
   <style>
-    :root{
-      --bg: #0b1020;
-      --panel: #121a33;
-      --text: #f2f5ff;
-      --muted: #c8d1ff;
-      --border: rgba(255,255,255,.16);
-      --accent: #7ef0c7;
-      --accent-2: #9bb7ff;
-      --danger: #ff9aa2;
-
+    :root {
+      --gov-black: #0b0c0c;
+      --gov-blue: #1d70b8;
+      --gov-yellow: #ffdd00;
+      --gov-white: #ffffff;
+      --gov-light-grey: #f3f2f1;
+      --gov-mid-grey: #b1b4b6;
+      --gov-soft: #f8f8f8;
+      --gov-panel: #eef4fa;
+      --max-width: 1100px;
       --radius: 14px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --max: 1100px;
+      --focus-ring: 4px solid var(--gov-yellow);
+      --font-stack: Arial, "Helvetica Neue", Helvetica, sans-serif;
     }
 
-    /* Base */
-    *{ box-sizing: border-box; }
-    html{ color-scheme: dark; }
-    body{
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      line-height: 1.55;
-      background: radial-gradient(1000px 600px at 20% 10%, rgba(155,183,255,.18), transparent 60%),
-                  radial-gradient(900px 500px at 90% 30%, rgba(126,240,199,.12), transparent 60%),
-                  var(--bg);
-      color: var(--text);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      color: var(--gov-black);
+      background: var(--gov-light-grey);
+      font-size: 1.125rem;
     }
 
-    a{ color: var(--text); text-underline-offset: 0.18em; }
-    a:hover{ text-decoration-thickness: 0.14em; }
-    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible{
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 10px;
+    a {
+      color: var(--gov-blue);
+      text-underline-offset: 0.18em;
     }
 
-    .skip-link{
+    a:hover {
+      text-decoration-thickness: 3px;
+    }
+
+    a:focus,
+    button:focus,
+    iframe:focus {
+      outline: var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
       position: absolute;
-      left: 0.75rem;
-      top: 0.75rem;
-      padding: 0.6rem 0.85rem;
-      background: #000;
-      color: #fff;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      transform: translateY(-200%);
-      transition: transform .15s ease;
-      z-index: 9999;
-    }
-    .skip-link:focus{ transform: translateY(0); }
-
-    header{
-      border-bottom: 1px solid var(--border);
-      background: rgba(18,26,51,.72);
-      backdrop-filter: blur(10px);
+      left: 1rem;
+      top: -100px;
+      background: var(--gov-yellow);
+      color: #000;
+      padding: 0.9rem 1rem;
+      font-weight: 700;
+      z-index: 1000;
+      text-decoration: none;
+      border: 2px solid #000;
     }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 1.1rem 1rem; }
-    .topbar{
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .site-header {
+      background: var(--gov-black);
+      color: var(--gov-white);
+      border-bottom: 8px solid var(--gov-blue);
+    }
+
+    .site-header__inner {
+      padding: 1rem 0 1.4rem;
+    }
+
+    .brand-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
 
-    .brand{
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
-    }
-    .logo{
-      inline-size: 44px;
-      block-size: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(126,240,199,.95), rgba(155,183,255,.95));
-      box-shadow: var(--shadow);
-    }
-    .brand strong{ font-size: 1.05rem; letter-spacing: 0.2px; }
-    .brand span{ display:block; color: var(--muted); font-size: 0.95rem; }
-
-    nav ul{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 0.2rem;
-      flex-wrap: wrap;
-    }
-    nav a{
-      display: inline-block;
-      padding: 0.55rem 0.75rem;
-      border-radius: 12px;
-      text-decoration: none;
-      border: 1px solid transparent;
-    }
-    nav a:hover{
-      border-color: var(--border);
-      background: rgba(255,255,255,.04);
+    .brand-row img {
+      height: 72px;
+      width: auto;
+      display: block;
     }
 
-    main{ padding: 1.5rem 0 2.5rem; }
-
-    .hero{
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.2rem;
-      align-items: start;
-    }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-    }
-
-    .card{
-      background: rgba(18,26,51,.72);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1rem;
-    }
-
-    h1{
-      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-      line-height: 1.2;
-      margin: 0 0 0.6rem;
-    }
-
-    .lead{
-      margin: 0.25rem 0 1rem;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-
-    .meta{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 0.9rem 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    .pill{
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
+    .brand-text {
       font-size: 0.95rem;
-    }
-
-    .actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 1rem;
-    }
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      padding: 0.75rem 1rem;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 650;
-      letter-spacing: 0.1px;
-      cursor: pointer;
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(126,240,199,.25), rgba(155,183,255,.18));
-      border-color: rgba(126,240,199,.55);
-    }
-    .btn:hover{ background: rgba(255,255,255,.06); }
-    .btn.primary:hover{ background: linear-gradient(135deg, rgba(126,240,199,.32), rgba(155,183,255,.22)); }
-
-    section{ margin-top: 1.2rem; }
-    section > h2{
-      font-size: 1.25rem;
-      margin: 0 0 0.7rem;
-    }
-    section > p{ color: var(--muted); margin: 0.4rem 0 0.9rem; }
-
-    .grid{
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(12, 1fr);
-    }
-    .col-6{ grid-column: span 6; }
-    .col-12{ grid-column: span 12; }
-    @media (max-width: 900px){
-      .col-6{ grid-column: span 12; }
-    }
-
-    .speaker{
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 0.85rem;
-      align-items: start;
-    }
-    .avatar{
-      inline-size: 64px;
-      block-size: 64px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(155,183,255,.35), rgba(126,240,199,.25));
-      border: 1px solid var(--border);
-    }
-    .speaker h3{
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #d8d8d8;
       margin: 0;
-      font-size: 1.1rem;
     }
-    .speaker .role{
-      margin: 0.15rem 0 0.35rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .speaker p{ margin: 0.3rem 0 0; color: var(--muted); }
 
-    .agenda{
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .subtitle {
       margin: 0;
-      padding-left: 1.2rem;
-      color: var(--muted);
-    }
-    .agenda li{ margin: 0.45rem 0; }
-    .agenda time{ color: var(--text); font-variant-numeric: tabular-nums; }
-
-    .note{
-      border-left: 4px solid var(--accent-2);
-      padding: 0.75rem 0.85rem;
-      background: rgba(155,183,255,.08);
-      border-radius: 12px;
-      color: var(--muted);
+      max-width: 56rem;
+      color: #ebebeb;
+      font-size: 1.18rem;
     }
 
-    /* Form */
-    form .row{ display: grid; gap: 0.8rem; grid-template-columns: repeat(12, 1fr); }
-    .field{ grid-column: span 12; }
-    .field.half{ grid-column: span 6; }
-    @media (max-width: 900px){
-      .field.half{ grid-column: span 12; }
+    .announcement {
+      background: var(--gov-white);
+      border-bottom: 4px solid var(--gov-yellow);
     }
-    label{ display:block; font-weight: 650; margin-bottom: 0.35rem; }
-    input, select, textarea{
-      width: 100%;
-      padding: 0.7rem 0.75rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,.25);
-      color: var(--text);
-    }
-    textarea{ min-height: 7rem; }
-    .help{ margin: 0.35rem 0 0; color: var(--muted); font-size: 0.95rem; }
-    .req{ color: var(--accent); font-weight: 800; }
 
-    details{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.02);
-      padding: 0.75rem 0.9rem;
-    }
-    summary{
-      cursor: pointer;
+    .announcement__inner {
+      padding: 0.9rem 0;
       font-weight: 700;
     }
-    details > div{ margin-top: 0.5rem; color: var(--muted); }
 
-    footer{
-      border-top: 1px solid var(--border);
-      background: rgba(18,26,51,.72);
+    main {
+      padding: 2rem 0 3rem;
     }
-    footer p{ color: var(--muted); margin: 0.25rem 0; }
 
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{ scroll-behavior: auto !important; transition: none !important; }
+    section + section {
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--gov-white);
+      border: 2px solid var(--gov-black);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 2px 0 rgba(11, 12, 12, 0.08);
+    }
+
+    .card--soft {
+      background: var(--gov-soft);
+      border-color: var(--gov-mid-grey);
+    }
+
+    .card--panel {
+      background: var(--gov-panel);
+      border-color: var(--gov-blue);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      max-width: 66ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .grid-equal {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-links {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .quick-links a {
+      display: block;
+      background: #fff;
+      border: 2px solid var(--gov-blue);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      font-weight: 700;
+      min-height: 100%;
+    }
+
+    .quick-links a:hover {
+      background: #f7fbff;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--gov-yellow);
+      color: #000;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+    }
+
+    .data-list {
+      margin: 0;
+    }
+
+    .data-list div + div {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--gov-mid-grey);
+    }
+
+    .data-list dt {
+      font-weight: 700;
+    }
+
+    .data-list dd {
+      margin: 0.15rem 0 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 850px;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.9rem 0.75rem;
+      border-bottom: 1px solid var(--gov-mid-grey);
+    }
+
+    thead th {
+      border-bottom: 4px solid var(--gov-black);
+      font-size: 1rem;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: var(--gov-soft);
+    }
+
+    .session-title {
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .small-list,
+    .simple-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .small-list li,
+    .simple-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gov-yellow);
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.9rem 1.1rem;
+      border: 2px solid #000;
+      border-radius: 8px;
+    }
+
+    .button:hover {
+      background: #f5cf00;
+    }
+
+    .form-embed-wrap {
+      border: 2px solid var(--gov-black);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .form-embed-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 2173px;
+      border: 0;
+    }
+
+    .links-years {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .year-link {
+      display: inline-block;
+      border: 2px solid var(--gov-blue);
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      text-decoration: none;
+      font-weight: 700;
+      background: #fff;
+    }
+
+    .intro-block {
+      margin-top: 1rem;
+    }
+
+    .site-footer {
+      background: var(--gov-black);
+      color: var(--gov-white);
+      border-top: 8px solid var(--gov-blue);
+    }
+
+    .site-footer__inner {
+      padding: 1.5rem 0 2rem;
+    }
+
+    .site-footer p {
+      margin: 0.5rem 0 0;
+      color: #d8d8d8;
+    }
+
+    @media (max-width: 980px) {
+      .grid-2,
+      .grid-equal,
+      .quick-links {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 1rem;
+      }
+
+      .grid-2,
+      .grid-equal,
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 1.1rem;
+      }
+
+      .brand-row img {
+        height: 60px;
+      }
+
+      .form-embed-wrap iframe {
+        min-height: 2300px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      .skip-link,
+      .button,
+      nav[aria-label="Navegación interna"],
+      #registro {
+        display: none !important;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
-  <header role="banner">
-    <div class="wrap topbar">
-      <a class="brand" href="#" aria-label="GAAD 2026 · Inicio">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <strong>GAAD 2026</strong>
-          <span>Global Accessibility Awareness Day</span>
-        </div>
-      </a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="brand-row">
+        <img
+          src="https://www.imatge.udl.cat/export/sites/Imatge/.galleries/imagenes-estructura/logo-udl-cabecera.png"
+          alt="Logo de la Universitat de Lleida"
+        >
+        <p class="brand-text">Universitat de Lleida</p>
+      </div>
 
-      <nav aria-label="Navegación principal">
-        <ul>
-          <li><a href="#sobre">Sobre el evento</a></li>
-          <li><a href="#ponentes">Ponentes</a></li>
-          <li><a href="#agenda">Agenda</a></li>
-          <li><a href="#accesibilidad">Accesibilidad</a></li>
-          <li><a href="#registro">Registro</a></li>
-        </ul>
-      </nav>
+      <h1>Jornada sobre el Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida - 2026</h1>
+      <p class="subtitle">
+        Jornada online para hablar, pensar y aprender sobre accesibilidad digital, diseño, desarrollo web,
+        evaluación e inteligencia artificial, con una mirada aplicada al ámbito universitario.
+      </p>
     </div>
   </header>
 
-  <main id="contenido" class="wrap" role="main">
-    <div class="hero">
-      <div class="card" aria-labelledby="titulo">
-        <h1 id="titulo">Evento GAAD 2026: accesibilidad en diseño y tecnología</h1>
-        <p class="lead">
-          Una jornada con conferencias invitadas, casos prácticos y espacio de preguntas para mejorar
-          la experiencia digital de todas las personas.
-        </p>
-
-        <ul class="meta" aria-label="Información del evento">
-          <li class="pill">
-            <span aria-hidden="true">📅</span>
-            <span>
-              <strong>Fecha:</strong>
-              <time datetime="2026-05-21">jueves, 21 de mayo de 2026</time>
-            </span>
-          </li>
-          <li class="pill">
-            <span aria-hidden="true">🕒</span>
-            <span><strong>Horario:</strong> 10:00–13:30 (CEST)</span>
-          </li>
-          <li class="pill">
-            <span aria-hidden="true">📍</span>
-            <span><strong>Formato:</strong> Híbrido (presencial + streaming)</span>
-          </li>
-        </ul>
-
-        <div class="actions" role="group" aria-label="Acciones principales">
-          <a class="btn primary" href="#registro">Reservar plaza</a>
-          <a class="btn" href="#accesibilidad">Necesidades de accesibilidad</a>
-          <a class="btn" href="#agenda">Ver agenda</a>
-        </div>
-
-        <p class="help" id="info-extra">
-          Entrada gratuita con inscripción. Aforo limitado. Se entregará certificado de asistencia (opcional).
-        </p>
-      </div>
-
-      <aside class="card" aria-labelledby="panel-titulo">
-        <h2 id="panel-titulo" style="margin:0 0 0.6rem; font-size:1.15rem;">Lo esencial</h2>
-        <div class="note" role="note" aria-label="Aviso">
-          <strong>Streaming con subtítulos</strong> y canal de preguntas moderado.
-          Si necesitas intérprete de LSE u otros apoyos, indícalo en el formulario.
-        </div>
-
-        <h3 style="margin:0.9rem 0 0.4rem; font-size:1.05rem;">Temas</h3>
-        <ul class="agenda">
-          <li>WCAG 2.2 en proyectos reales</li>
-          <li>Diseño inclusivo y sistemas de diseño</li>
-          <li>Accesibilidad en front-end (ARIA “lo justo”)</li>
-          <li>Investigación con personas usuarias</li>
-        </ul>
-      </aside>
+  <div class="announcement" role="status" aria-live="polite">
+    <div class="container announcement__inner">
+      Jueves 28 de mayo de 2026 · Modalidad online · Acceso a la sesión por Teams con inscripción previa
     </div>
+  </div>
 
-    <section id="sobre" aria-labelledby="sobre-titulo" class="card" style="margin-top:1.2rem;">
-      <h2 id="sobre-titulo">Sobre el evento</h2>
-      <p>
-        GAAD (Global Accessibility Awareness Day) promueve la conversación y el aprendizaje en torno a la accesibilidad digital.
-        En esta edición 2026 nos centraremos en cómo diseñar y construir productos web más usables, robustos e inclusivos.
-      </p>
-      <p class="help">
-        Recomendado para: diseño digital, desarrollo web, producto, QA, contenidos, docencia y estudiantes.
-      </p>
-    </section>
+  <main id="contenido-principal">
+    <div class="container">
 
-    <section id="ponentes" aria-labelledby="ponentes-titulo" style="margin-top:1.2rem;">
-      <h2 id="ponentes-titulo">Conferencias invitadas</h2>
-      <p>
-        Sustituye estos perfiles por los ponentes reales (nombre, bio, charla y enlaces). Si usas foto, añade <code>alt</code> descriptivo.
-      </p>
+      <section class="card" aria-labelledby="titulo-navegacion">
+        <h2 id="titulo-navegacion">Contenido</h2>
+        <nav aria-label="Navegación interna">
+          <ul class="quick-links">
+            <li><a href="#detalles">Detalles del evento</a></li>
+            <li><a href="#programa">Programa</a></li>
+            <li><a href="#registro">Registro</a></li>
+          </ul>
+        </nav>
+      </section>
 
-      <div class="grid" role="list" aria-label="Listado de ponentes">
-        <article class="card col-6" role="listitem">
-          <div class="speaker">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <h3>Dr.ª Alex Rivera</h3>
-              <p class="role">Investigación UX · Universidad / Lab de Inclusión</p>
-              <p><strong>Charla:</strong> “Diseño centrado en la diversidad: de la investigación al entregable”</p>
-              <p class="help">
-                <a href="#" aria-label="Perfil de Alex Rivera (enlace de ejemplo)">Perfil</a>
-                · <a href="#" aria-label="Recursos de la charla de Alex Rivera (enlace de ejemplo)">Recursos</a>
-              </p>
-            </div>
-          </div>
-        </article>
+      <section class="card" aria-labelledby="titulo-presentacion">
+        <span class="tag">Inscripción abierta</span>
+        <h2 id="titulo-presentacion">Presentación</h2>
+        <p class="lead">
+          Esta jornada se organiza con motivo del Día Mundial de la Concienciación sobre la Accesibilidad Digital
+          para crear un espacio de encuentro, reflexión y aprendizaje en torno al acceso a la información y al uso
+          de tecnologías digitales por parte de todas las personas.
+        </p>
+        <p>
+          A lo largo del programa se abordarán temas relacionados con discapacidad, diseño digital accesible,
+          desarrollo de webs dinámicas, evaluación e inteligencia artificial, con el objetivo de compartir enfoques,
+          experiencias y buenas prácticas aplicadas al contexto universitario.
+        </p>
+        <p>
+          La participación es gratuita y se realizará en modalidad online. Para asistir será necesario completar
+          previamente el formulario de inscripción.
+        </p>
 
-        <article class="card col-6" role="listitem">
-          <div class="speaker">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <h3>Samir Benítez</h3>
-              <p class="role">Frontend · Accesibilidad en diseño de sistemas</p>
-              <p><strong>Charla:</strong> “Accesibilidad práctica: patrones, componentes y pruebas”</p>
-              <p class="help">
-                <a href="#" aria-label="Perfil de Samir Benítez (enlace de ejemplo)">Perfil</a>
-                · <a href="#" aria-label="Repositorio de ejemplos de Samir Benítez (enlace de ejemplo)">Ejemplos</a>
-              </p>
-            </div>
-          </div>
-        </article>
+        
+      </section>
 
-        <article class="card col-6" role="listitem">
-          <div class="speaker">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <h3>María Torres</h3>
-              <p class="role">Contenido y lenguaje claro · Sector público</p>
-              <p><strong>Charla:</strong> “Lenguaje claro y accesibilidad cognitiva en la web”</p>
-              <p class="help">
-                <a href="#" aria-label="Perfil de María Torres (enlace de ejemplo)">Perfil</a>
-                · <a href="#" aria-label="Guía de lenguaje claro de María Torres (enlace de ejemplo)">Guía</a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card col-6" role="listitem">
-          <div class="speaker">
-            <div class="avatar" aria-hidden="true"></div>
-            <div>
-              <h3>Panel de cierre</h3>
-              <p class="role">Preguntas del público · Moderación</p>
-              <p><strong>Sesión:</strong> “Lo que funciona (y lo que no) al implantar accesibilidad”</p>
-              <p class="help">Formato: 25 min + 15 min Q&amp;A</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="agenda" aria-labelledby="agenda-titulo" class="card" style="margin-top:1.2rem;">
-      <h2 id="agenda-titulo">Agenda</h2>
-      <p>Horario orientativo (CEST). Los tiempos incluyen transición entre sesiones.</p>
-
-      <ol class="agenda" aria-label="Agenda del evento">
-        <li>
-          <time datetime="2026-05-21T10:00">10:00</time> — Apertura y objetivos del día
-        </li>
-        <li>
-          <time datetime="2026-05-21T10:15">10:15</time> — Conferencia invitada 1
-        </li>
-        <li>
-          <time datetime="2026-05-21T11:05">11:05</time> — Pausa
-        </li>
-        <li>
-          <time datetime="2026-05-21T11:25">11:25</time> — Conferencia invitada 2
-        </li>
-        <li>
-          <time datetime="2026-05-21T12:15">12:15</time> — Conferencia invitada 3
-        </li>
-        <li>
-          <time datetime="2026-05-21T13:00">13:00</time> — Panel y preguntas (presencial + chat)
-        </li>
-        <li>
-          <time datetime="2026-05-21T13:25">13:25</time> — Cierre y próximos pasos
-        </li>
-      </ol>
-    </section>
-
-    <section id="accesibilidad" aria-labelledby="acc-titulo" class="card" style="margin-top:1.2rem;">
-      <h2 id="acc-titulo">Compromiso de accesibilidad</h2>
-      <p>
-        Queremos que el evento sea accesible para el mayor número de personas posible. Estas son medidas previstas
-        (edita según lo que realmente ofrezcas):
-      </p>
-
-      <ul class="agenda" aria-label="Medidas de accesibilidad del evento">
-        <li>Streaming con subtítulos (en directo o diferido, según disponibilidad).</li>
-        <li>Materiales en formato digital accesible (PDF etiquetado o HTML).</li>
-        <li>Micrófono obligatorio para intervenciones y preguntas en sala.</li>
-        <li>Espacio para movilidad reducida y asientos reservados.</li>
-        <li>Canal de preguntas por escrito para quien lo prefiera.</li>
-      </ul>
-
-      <details>
-        <summary>¿Necesitas un ajuste o apoyo específico?</summary>
-        <div>
-          Indícalo en el formulario de registro y nos pondremos en contacto. Ejemplos: intérprete de LSE, bucle magnético,
-          materiales con antelación, descansos adicionales, etc.
-        </div>
-      </details>
-
-      <details style="margin-top:0.8rem;">
-        <summary>Declaración de accesibilidad de esta página</summary>
-        <div>
-          Esta página usa estructura semántica, enlaces de salto, foco visible, buen contraste y formularios con etiquetas.
-          Si detectas algún problema, escribe a <a href="mailto:accesibilidad@ejemplo.org">accesibilidad@ejemplo.org</a>.
-        </div>
-      </details>
-    </section>
-
-    <section id="registro" aria-labelledby="reg-titulo" class="card" style="margin-top:1.2rem;">
-      <h2 id="reg-titulo">Registro</h2>
-      <p id="reg-ayuda">
-        Completa el formulario. Los campos marcados con <span class="req" aria-hidden="true">*</span>
-        son obligatorios.
-      </p>
-
-      <form action="#" method="post" aria-describedby="reg-ayuda">
-        <div class="row">
-          <div class="field half">
-            <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
-            <input id="nombre" name="nombre" type="text" autocomplete="given-name" required aria-required="true" />
-          </div>
-
-          <div class="field half">
-            <label for="apellidos">Apellidos <span class="req" aria-hidden="true">*</span></label>
-            <input id="apellidos" name="apellidos" type="text" autocomplete="family-name" required aria-required="true" />
-          </div>
-
-          <div class="field half">
-            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
-                   aria-describedby="email-help" />
-            <p class="help" id="email-help">Usaremos tu email solo para enviarte la confirmación y novedades del evento.</p>
-          </div>
-
-          <div class="field half">
-            <label for="modalidad">Modalidad <span class="req" aria-hidden="true">*</span></label>
-            <select id="modalidad" name="modalidad" required aria-required="true">
-              <option value="">Selecciona una opción</option>
-              <option value="presencial">Presencial</option>
-              <option value="online">Online (streaming)</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="ajustes">Necesidades de accesibilidad o ajustes razonables</label>
-            <textarea id="ajustes" name="ajustes" aria-describedby="ajustes-help"
-              placeholder="Ej.: intérprete de LSE, materiales con antelación, preferencia de asiento, etc."></textarea>
-            <p class="help" id="ajustes-help">Si lo prefieres, también puedes escribir a accesibilidad@ejemplo.org.</p>
-          </div>
-
-          <fieldset class="field" style="border:1px solid var(--border); border-radius: var(--radius); padding: 0.9rem;">
-            <legend style="padding: 0 0.4rem; font-weight: 800;">Privacidad</legend>
-
-            <div style="display:flex; gap:0.6rem; align-items:flex-start;">
-              <input id="consent" name="consent" type="checkbox" required aria-required="true"
-                     style="width:auto; margin-top:0.15rem;" />
-              <div>
-                <label for="consent" style="margin:0;">
-                  Acepto la política de privacidad <span class="req" aria-hidden="true">*</span>
-                </label>
-                <p class="help" style="margin:0.25rem 0 0;">
-                  Texto de ejemplo. Sustituye por tu política real o enlázala aquí.
-                </p>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="field">
-            <button class="btn primary" type="submit">Enviar registro</button>
-            <p class="help" role="status" aria-live="polite" style="margin-top:0.6rem;">
-              Tras enviar, recibirás un email de confirmación (ejemplo).
+      <section id="detalles" class="card" aria-labelledby="titulo-detalles">
+        <h2 id="titulo-detalles">Detalles del evento</h2>
+        <div class="grid grid-2">
+          <div>
+            <p class="lead">
+              La jornada se celebrará en línea y el acceso a la sesión se realizará mediante Microsoft Teams.
+            </p>
+            <p>
+              Las personas inscritas recibirán la información necesaria para conectarse a la videoconferencia.
             </p>
           </div>
-        </div>
-      </form>
 
-      <p class="help" style="margin-top:0.8rem;">
-        ¿Dudas? Contacto: <a href="mailto:eventos@ejemplo.org">eventos@ejemplo.org</a>
-      </p>
-    </section>
+          <aside class="card card--soft" aria-labelledby="titulo-datos-clave">
+            <h3 id="titulo-datos-clave">Información básica</h3>
+            <dl class="data-list">
+              <div>
+                <dt>Evento</dt>
+                <dd>Día Mundial de la Concienciación sobre la Accesibilidad Digital</dd>
+              </div>
+              <div>
+                <dt>Fecha</dt>
+                <dd>28 de mayo</dd>
+              </div>
+              <div>
+                <dt>Modalidad</dt>
+                <dd>Online</dd>
+              </div>
+              <div>
+                <dt>Plataforma</dt>
+                <dd>Microsoft Teams</dd>
+              </div>
+              <div>
+                <dt>Inscripción</dt>
+                <dd>Obligatoria</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="programa" class="card" aria-labelledby="titulo-programa">
+        <h2 id="titulo-programa">Programa</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Programa provisional de la jornada</caption>
+            <thead>
+              <tr>
+                <th scope="col">Hora</th>
+                <th scope="col">Sesión</th>
+                <th scope="col">Participación propuesta</th>
+                <th scope="col">Objetivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">17:00</th>
+                <td>
+                  <div class="session-title">Bienvenida</div>
+                  <ul class="small-list">
+                    <li>Presentación de la jornada.</li>
+                    <li>Proyecto AVTIA.</li>
+                    <li>Proyecto del grupo GRIHO para mejorar la experiencia de personas con discapacidad intelectual.</li>
+                    <li>Microcredenciales de accesibilidad de formación continua de la UdL.</li>
+                  </ul>
+                </td>
+                <td>Pendiente de confirmar</td>
+                <td>Presentar la jornada y explicar qué proyectos y formaciones de accesibilidad se impulsan desde la UdL.</td>
+              </tr>
+              <tr>
+                <th scope="row">17:20</th>
+                <td><div class="session-title">Sesión sobre personas con discapacidad</div></td>
+                <td>Mario Almonte (propuesta)</td>
+                <td>Explicar la importancia de la accesibilidad en los sistemas digitales y cómo acceden a ellos distintas personas con discapacidad.</td>
+              </tr>
+              <tr>
+                <th scope="row">17:40</th>
+                <td><div class="session-title">Sesión sobre diseño digital accesible</div></td>
+                <td>Xavi Cardet (propuesta)</td>
+                <td>Mostrar cómo el diseño de los sistemas puede ayudar a las personas con discapacidad o convertirse en una barrera de acceso a la información.</td>
+              </tr>
+              <tr>
+                <th scope="row">18:00</th>
+                <td><div class="session-title">Sesión sobre vibe coding accesible</div></td>
+                <td>Oriol Gomez Sentis (propuesta)</td>
+                <td>Presentar cómo las herramientas de inteligencia artificial pueden ayudar a crear soluciones y prototipos con criterios de accesibilidad.</td>
+              </tr>
+              <tr>
+                <th scope="row">18:20</th>
+                <td><div class="session-title">Sesión sobre desarrollo de webs dinámicas accesibles</div></td>
+                <td>Alberto Pedrero (propuesta)</td>
+                <td>Explicar los problemas que los sistemas dinámicos pueden causar a las personas con discapacidad y cómo evitarlos durante el desarrollo.</td>
+              </tr>
+              <tr>
+                <th scope="row">18:40</th>
+                <td><div class="session-title">Sesión sobre IA y accesibilidad</div></td>
+                <td>Jose Humanes (propuesta)</td>
+                <td>Explorar las capacidades de la inteligencia artificial para desarrollar contenidos más accesibles y apoyar procesos de adaptación y revisión.</td>
+              </tr>
+              <tr>
+                <th scope="row">19:00</th>
+                <td><div class="session-title">Sesión sobre evaluación</div></td>
+                <td>Afra Pascual (propuesta)</td>
+                <td>Explicar cuáles son las barreras habituales en aplicaciones o sitios web y cómo detectarlas durante una evaluación.</td>
+              </tr>
+              <tr>
+                <th scope="row">19:20</th>
+                <td><div class="session-title">Cierre</div></td>
+                <td>Equipo organizador</td>
+                <td>Cerrar la jornada, recoger ideas clave y abrir próximos pasos para seguir impulsando la accesibilidad digital.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="registro" class="card" aria-labelledby="titulo-registro">
+        <div class="grid grid-equal">
+          <div>
+            <h2 id="titulo-registro">Registro</h2>
+            <p class="lead">
+              El acceso a la jornada se realizará mediante Microsoft Teams y requiere inscripción previa.
+            </p>
+            <p>
+              Completa el formulario para registrarte. La información de acceso a la sesión se facilitará
+              a las personas inscritas.
+            </p>
+            <p>
+              <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">
+                Abrir formulario de inscripción
+              </a>
+            </p>
+          </div>
+
+          <aside class="card card--soft" aria-labelledby="titulo-info-registro">
+            <h3 id="titulo-info-registro">Información de acceso</h3>
+            <ul class="simple-list">
+              <li>Modalidad: online.</li>
+              <li>Plataforma: Microsoft Teams.</li>
+              <li>Requisito: inscripción previa.</li>
+              <li>El enlace de acceso se enviará a las personas inscritas.</li>
+            </ul>
+          </aside>
+        </div>
+
+        
+      </section>
+    </div>
   </main>
 
-  <footer role="contentinfo">
-    <div class="wrap">
-      <p><strong>GAAD 2026</strong> · Organiza: <span>Tu institución / grupo de investigación</span></p>
-      <p>
-        <a href="#contenido">Volver arriba</a>
-        · <a href="#" aria-label="Política de privacidad (enlace de ejemplo)">Privacidad</a>
-        · <a href="#" aria-label="Código de conducta (enlace de ejemplo)">Código de conducta</a>
-      </p>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <strong>Universitat de Lleida</strong>
+      <p>Jornada sobre accesibilidad digital en modalidad online con inscripción previa.</p>
     </div>
   </footer>
 </body>
