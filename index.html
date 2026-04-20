@@ -650,7 +650,37 @@
     }
 
     .site-footer__inner {
+      align-items: center;
+      display: flex;
+      gap: 1rem;
       padding: 0;
+    }
+
+    .site-footer__logo {
+      background: #fff;
+      border-radius: 8px;
+      display: block;
+      height: 76px;
+      object-fit: contain;
+      padding: 0.35rem;
+      width: 76px;
+    }
+
+    .site-footer__logo-link {
+      border-radius: 8px;
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .site-footer__link {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .site-footer p {
+      margin: 0.25rem 0 0;
     }
 
     .footer h2 {
@@ -704,6 +734,11 @@
       .top-bar__inner {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .site-footer__inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .utility-bar__inner {
@@ -1051,22 +1086,19 @@
       </section>
 
       <section id="registro" class="section" aria-labelledby="registro-title">
-        <div class="grid grid-equal">
-          <div>
+        <div class="grid">
+          <div class="cta-box" aria-labelledby="registro-info-title">
             <h2 id="registro-title">Registro</h2>
-            <p>El acceso a la jornada se realizará mediante Microsoft Teams y requiere inscripción previa.</p>
-            <p>Completa el formulario para registrarte. La información de acceso a la sesión se facilitará a las personas inscritas.</p>
-            <p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">Abrir formulario de inscripción <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
-          </div>
-          <aside class="cta-box" aria-labelledby="registro-info-title">
-            <h3 id="registro-info-title">Información de acceso</h3>
             <ul class="simple-list">
               <li>Modalidad: online.</li>
               <li>Plataforma: Microsoft Teams.</li>
               <li>Requisito: inscripción previa.</li>
               <li>El enlace de acceso se enviará a las personas inscritas.</li>
             </ul>
-          </aside>
+            <p>El acceso a la jornada se realizará mediante Microsoft Teams y requiere inscripción previa.</p>
+            <p>Completa el formulario para registrarte. La información de acceso a la sesión se facilitará a las personas inscritas.</p>
+            <p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">Abrir formulario de inscripción <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+          </div>          
         </div>
       </section>
     </div>
@@ -1074,8 +1106,14 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <strong>Universitat de Lleida</strong>
-      <p>Jornada sobre accesibilidad digital en modalidad online con inscripción previa.</p>
+      <a class="site-footer__logo-link" href="https://www.udl.cat/" target="_blank" rel="noopener noreferrer">
+        <img class="site-footer__logo" src="imgs/udl.jpeg" alt="Logotipo de la Universitat de Lleida" width="220" height="220">
+        <span class="sr-only">(se abre en una pestaña nueva)</span>
+      </a>
+      <div>
+        <a class="site-footer__link" href="https://www.udl.cat/" target="_blank" rel="noopener noreferrer">Universitat de Lleida <span class="sr-only">(se abre en una pestaña nueva)</span></a>
+        <p>I Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital en la Universitat de Lleida - 2026.</p>
+      </div>
     </div>
   </footer>
   <script>
