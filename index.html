@@ -240,8 +240,15 @@
       background: rgba(16, 17, 26, 0.72);
       border: 1px solid rgba(255, 255, 255, 0.22);
       padding: 1.35rem 1.35rem 1.1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       min-height: 100%;
+    }
+
+    .hero__kicker {
+      margin: 0 0 0.45rem;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
     }
 
     h1 {
@@ -326,9 +333,9 @@
       display: block;
       font-size: 0.84rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0;
       /*color: #e5d38c;*/
-      color: white
+      color: white;
       font-weight: 800;
       margin-bottom: 0.25rem;
     }
@@ -399,6 +406,117 @@
 
     .card__text {
       margin: 0.45rem 0 0;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .program-intro {
+      max-width: 72ch;
+    }
+
+    .dfe-grid-container {
+      display: grid;
+      gap: 1rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .dfe-card {
+      display: grid;
+      grid-template-columns: 7rem minmax(0, 1fr);
+      border: 1px solid var(--udl-gray-300);
+      border-radius: 8px;
+      background: #fff;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .dfe-card__time {
+      margin: 0;
+      background: var(--udl-magenta);
+      color: #fff;
+      padding: 0.7rem 0.85rem;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .dfe-card-container {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      column-gap: 1rem;
+      align-items: start;
+      padding: 0.85rem;
+    }
+
+    .dfe-card__speaker {
+      display: grid;
+      justify-items: center;
+      gap: 0.55rem;
+      grid-column: 1;
+      grid-row: 1 / span 12;
+      margin: 0;
+      text-align: left;
+    }
+
+    .dfe-card__speaker-link {
+      align-items: center;
+      color: var(--udl-blue);
+      display: inline-flex;
+      gap: 0.35rem;
+      text-underline-offset: 0.18em;
+    }
+
+    .linkedin-icon {
+      align-items: center;
+      background: #0a66c2;
+      border-radius: 3px;
+      color: #fff;
+      display: inline-flex;
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      height: 1.25rem;
+      justify-content: center;
+      line-height: 1;
+      width: 1.25rem;
+    }
+
+    .dfe-card__speaker-image {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .dfe-card-container > :not(.dfe-card__speaker) {
+      grid-column: 2;
+    }
+
+    .govuk-heading-m {
+      margin: 0 0 0.65rem;
+      font-size: 1.12rem;
+      line-height: 1.25;
+      color: #1f1f1f;
+    }
+
+    .dfe-card__label {
+      display: block;
+      margin-top: 0.75rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .dfe-card-container p,
+    .dfe-card-container ul {
+      margin-top: 0.35rem;
+      margin-bottom: 0;
+    }
+
+    .govuk-body-s {
       color: #444;
       font-size: 0.95rem;
     }
@@ -517,33 +635,6 @@
       margin-bottom: 0.45rem;
     }
 
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 760px;
-    }
-
-    caption {
-      text-align: left;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    th,
-    td {
-      border-bottom: 1px solid var(--udl-gray-300);
-      padding: 0.65rem;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    thead th { background: #efeff2; }
-
     .footer,
     .site-footer {
       background: #404040;
@@ -602,6 +693,7 @@
       .stats-grid,
       .split,
       .grid-equal,
+      .dfe-grid-container,
       .agenda,
       .hero__layout,
       .hero__facts,
@@ -675,55 +767,30 @@
         width: 100%;
       }
 
+      .dfe-card,
+      .dfe-card-container {
+        grid-template-columns: 1fr;
+      }
+
+      .dfe-card__time {
+        justify-content: flex-start;
+      }
+
+      .dfe-card__speaker,
+      .dfe-card-container > :not(.dfe-card__speaker) {
+        grid-column: 1;
+      }
+
+      .dfe-card__speaker {
+        grid-row: auto;
+        justify-items: start;
+        margin-bottom: 0.8rem;
+      }
+
       .hero__fact {
         min-width: 0;
       }
 
-      .table-wrap {
-        overflow: visible;
-      }
-
-      table {
-        min-width: 0;
-      }
-
-      table,
-      tbody,
-      tr,
-      th,
-      td {
-        display: block;
-      }
-
-      thead {
-        display: none;
-      }
-
-      tbody {
-        display: grid;
-        gap: 0.9rem;
-      }
-
-      tbody tr {
-        border: 1px solid var(--udl-gray-300);
-        border-radius: 8px;
-        overflow: hidden;
-        background: #fff;
-      }
-
-      th[scope="row"] {
-        background: #efeff2;
-        font-size: 1.05rem;
-        font-weight: 800;
-      }
-
-      td::before {
-        content: attr(data-label);
-        display: block;
-        margin-bottom: 0.25rem;
-        font-weight: 700;
-        color: #232323;
-      }
     }
 
     @media (max-width: 480px) {
@@ -757,10 +824,6 @@
         font-size: 0.95rem;
       }
 
-      td,
-      th {
-        padding: 0.75rem;
-      }
     }
   </style>
 </head>
@@ -814,8 +877,9 @@
     <div class="container">
       <div class="hero__layout" id="presentacion">
         <div class="hero__panel">
-          <h1 id="hero-title">I Jornada de celebración del Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida - 2026.</h1>
-          <p class="hero__lead">Jornada online para aprender sobre accesibilidad digital, diseño, desarrollo web, evaluación e inteligencia artificial.</p>
+          <p class="hero__kicker">I GAAD UdL</p>
+          <h1 id="hero-title">Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital en la Universitat de Lleida - 2026.</h1>
+          <p class="hero__lead">Primera jornada online de la Universitat de Lleida para aprender sobre diseño, desarrollo web, evaluación e inteligencia artificial en el ámbito de la accesibilidad digital.</p>
           <!--<p class="hero__meta">Jueves 28 de mayo de 2026 · Modalidad online · Acceso a la sesión por Teams con inscripción previa</p> -->
           <div class="hero__actions">
             <a class="hero__button hero__button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">Inscripción <span class="sr-only">(se abre en una pestaña nueva)</span></a>
@@ -825,8 +889,8 @@
           <ul class="hero__facts">
             <li class="hero__fact"><span class="hero__fact-title">Fecha</span><p class="hero__fact-text">28 mayo 2026</p></li>
             <li class="hero__fact"><span class="hero__fact-title">Horario</span><p class="hero__fact-text">17:00 - 20:00</p></li>
-            <li class="hero__fact"><span class="hero__fact-title">Metodología</span><p class="hero__fact-text">Online · Teams</p></li>
-            <li class="hero__fact"><span class="hero__fact-title">Inscripción</span><p class="hero__fact-text">Gratuita y obligatoria</p></li>
+            <li class="hero__fact"><span class="hero__fact-title">Acceso</span><p class="hero__fact-text">Online · Teams</p></li>
+            <li class="hero__fact"><span class="hero__fact-title">Inscripción</span><p class="hero__fact-text">Gratuita</p></li>
           </ul>
         </div>
       </div>
@@ -837,124 +901,152 @@
     <div class="container">
       <section class="section" aria-labelledby="detalles">
         <h2 id="detalles">Presentación</h2>
-        <p>El día 21 de mayo de 2026 se celebra el Día Mundial de la Concienciación sobre la Accesibilidad Digital, y en la Universidad de Lleida crearemos un espacio de encuentro, reflexión y aprendizaje en torno al acceso a la información y al uso de tecnologías digitales por parte de todas las personas.
+        <p>En el mes de mayo, se celebra el Día Mundial de la Concienciación sobre la Accesibilidad Digital  <a class="dfe-card__speaker-link" href="https://accessibility.day/" target="_blank" rel="noopener noreferrer">(GAAD) <span class="sr-only">(se abre en una pestaña nueva)</span></a>, y en la  <a class="dfe-card__speaker-link" href="https://accessibility.day/" target="_blank" rel="noopener noreferrer">Universidad de Lleida <span class="sr-only">(se abre en una pestaña nueva)</span></a> crearemos un espacio de encuentro, reflexión y aprendizaje en torno a la accesibilidad digital.
         </p>  
         <p>
-          A lo largo del programa se abordarán temas relacionados con discapacidad, diseño digital accesible, desarrollo de webs dinámicas, evaluación e inteligencia artificial, con el objetivo de compartir enfoques, experiencias y buenas prácticas aplicadas al contexto universitario.
+          A lo largo del programa abordará de forma muy práctica temas relacionados con discapacidad, diseño digital, desarrollo de webs, documentos accesibles y evaluación e inteligencia artificial, con el objetivo de compartir enfoques, experiencias y herramientas aplicadas a mejorar el acceso de todas las personas.
         </p>  
         <p>
           La participación es gratuita y se realizará en modalidad online. 
         </p>  
-        <p>
-          Para asistir será necesario completar previamente el formulario de inscripción.
-        </p>
         <!--<p>La jornada ofrecerá un formato práctico con demostraciones, casos reales y criterios aplicables de accesibilidad digital para el entorno universitario.</p>
       -->
       </section>
 
       <section id="programa" class="section" aria-labelledby="programa-title">
         <h2 id="programa-title">Programa de la jornada</h2>
-        <div class="table-wrap">
-          <table>
-            <caption>Programa provisional de la jornada</caption>
-            <thead>
-              <tr>
-                <th scope="col">Hora</th>
-                <th scope="col">Sesión</th>
-                <th scope="col">Participación propuesta</th>
-                <th scope="col">Objetivo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">17:00</th>
-                <td data-label="Sesión">
-                  <div class="session-title">Bienvenida - La accesibilidad no es opcional</div>
-                  <ul class="small-list">
-                    <li>Presentación de la jornada.</li>
-                    <li>
-                      Proyectos de accesibilidad de la UdL.
-                      <ul class="small-list">
-                        <li>Mostramos un problema real, la solución y cómo impacta en las personas.</li>
-                        <li>Proyecto AVTIA.</li>
-                        <li>Proyecto del grupo GRIHO para mejorar la experiencia de personas con discapacidad intelectual.</li>
-                      </ul>
-                    </li>
-                    <li>
-                      Formación en accesibilidad en la UdL.
-                      <ul class="small-list">
-                        <li>Microcredenciales de accesibilidad de formación continua de la UdL.</li>
-                        <li>Especialista en accesibilidad digital.</li>
-                        <li>Documentos digitales accesibles.</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </td>
-                <td data-label="Participación propuesta">Pendiente de confirmar</td>
-                <td data-label="Objetivo">Presentar la jornada y explicar qué proyectos y formaciones de accesibilidad se impulsan desde la UdL.</td>
-              </tr>
-              <tr>
-                <th scope="row">17:35</th>
-                <td data-label="Sesión"><div class="session-title">Sesión "Así acceden a la tecnologia las personas con discapacidad”</div></td>
-                <td data-label="Participación propuesta">Mario Almonte (propuesta)</td>
-                  <td data-label="Objetivo">Explicar la importancia de la accesibilidad en los sistemas digitales y cómo acceden a ellos distintas personas con discapacidad.
-                  <ul>
-                    <li>Personas con discapacidad visual: lector de pantalla, magnificador y braille.</li>
-                    <li>Personas con discapacidad motriz: navegación por teclado.</li>
-                    <li>Personas con discapacidad auditiva: subtítulos, transcripción y lengua de signos.</li>
-                    <li>Personas con discapacidad cognitiva: lenguaje claro, estructura y navegación sencilla.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">17:55</th>
-                <td data-label="Sesión"><div class="session-title">Sesión “Diseño digital que incluye (o excluye)”</div></td>
-                <td data-label="Participación propuesta">Xavi Cardet (propuesta)</td>
-                  <td data-label="Objetivo"> 
-                  <p>Lo que acabamos de ver sobre cómo se puede acceder a la tecnología digital empieza en el diseño o en la falta de diseño.</p>
-                  <p>Mostrar cómo el diseño de los sistemas puede ayudar a las personas con discapacidad o convertirse en una barrera de acceso a la información.</p></td>
-              </tr>
-              <tr>
-                <th scope="row">18:15</th>
-                <td data-label="Sesión"><div class="session-title">Sesión “Por qué las webs dinámicas rompen la accesibilidad”</div></td>
-                <td data-label="Participación propuesta">Alberto Pedrero (propuesta)</td>
-                <td data-label="Objetivo">Explicar los problemas que los sistemas dinámicos pueden causar a las personas con discapacidad y cómo evitarlos durante el desarrollo.</td>
-              </tr>
-              <tr>
-                <th scope="row">18:35</th>
-                <td data-label="Sesión"><div class="session-title">Sesión "IA aliada o problema para la accesibilidad"</div></td>
-                <td data-label="Participación propuesta">Oriol Gomez Sentis (propuesta)</td>
-                <td data-label="Objetivo">Presentar cómo el Vibe coding puede ser accesible y como las herramientas de inteligencia artificial pueden ayudar a crear soluciones y prototipos con criterios de accesibilidad.</td>
-              </tr>
-              <tr>
-                <th scope="row">18:55</th>
-                <td data-label="Sesión"><div class="session-title">Sesión "Documentos digitales accesibles"</div></td>
-                <td data-label="Participación propuesta">Jose Humanes (propuesta)</td>
-                <td data-label="Objetivo">Explorar como los documentos PDFs pueden ser más accesibles: adaptación y revisión.</td>
-              </tr>
-              <tr>
-                <th scope="row">19:15</th>
-                <td data-label="Sesión"><div class="session-title">RETO EN DIRECTO - Sesión "Herramienta para evaluar aspectos clave de accesibilidad en una web”</div></td>
-                <td data-label="Participación propuesta">Afra Pascual (propuesta)</td>
-                <td data-label="Objetivo">
-                  <p>Descargar e instalar una herramienta para que las personas asistentes puedan usarla durante la sesión.</p>
-                  <p>Hacer un ejercicio práctico sobre evaluación de una web y detectar errores en directo.</p></td>
-              </tr> 
-              <tr>
-                <th scope="row">19:45</th>
-                <td data-label="Sesión"><div class="session-title">Cierre</div></td>
-                <td data-label="Participación propuesta">Equipo organizador</td>
-                <td data-label="Objetivo"><p>Qué puedes hacer mañana para formarte en accesibilidad </p>
-                  <p>Microcredenciales UdL</p>
-                  <p>Aplicar cambios en las webs/documentos</p>
-                  <p>Recoger ideas clave y abrir próximos pasos para seguir impulsando la accesibilidad digital.</p>
-                <p>Si hoy te hemos abierto los ojos, esto lo trabajamos en profundidad en las microcredenciales de accesibilidad de la UdL.</p>
-                </td>
+        <p>Consulta las sesiones previstas, la participación propuesta y el objetivo de cada bloque.</p>
+        <div class="dfe-grid-container">
+          <article class="dfe-card" aria-labelledby="programa-card-1700">
+            <p class="dfe-card__time">17:00</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1700" class="govuk-heading-m">Bienvenida - La accesibilidad no es opcional</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/udl.jpeg" alt="Logotipo de la Universitat de Lleida" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Contenido</span>
+              <ul>
+                <li>Presentación de la jornada.</li>
+                <li>
+                  Proyectos de accesibilidad de la UdL.
+                </li>
+                <li>
+                  Formación continua en accesibilidad en la UdL.
+                </li>
+              </ul>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s">Vicerector de Gobernanza y PTGAS y Vicerectora de Compromiso Social, Igualdad y Cooperación.</p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>Presentar la jornada y explicar qué proyectos y formaciones de accesibilidad que se impulsan desde la UdL.</p>
+            </div>
+          </article>
 
+          <article class="dfe-card" aria-labelledby="programa-card-1735">
+            <p class="dfe-card__time">17:35</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1735" class="govuk-heading-m">Desmontando mitos de la accesibilidad digital</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/mario-almonte.jpeg" alt="Retrato de Mario Almonte Moreno" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/marioalmonte/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Mario Almonte Moreno <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>Cuestionar suposiciones frecuentes sobre accesibilidad digital a través de ejemplos prácticos que demuestran que las soluciones efectivas requieren ir más allá de la intuición.</p>
+            </div>
+          </article>
 
-              </tr>
-            </tbody>
-          </table>
+          <article class="dfe-card" aria-labelledby="programa-card-1755">
+            <p class="dfe-card__time">17:55</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1755" class="govuk-heading-m">El mayor bug de tu interfaz no está en el código</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/xavi-cardet.jpeg" alt="Retrato de Xavi Cardet" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/uxavi-cardet/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Xavi Cardet <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>Una interfaz puede funcionar perfectamente a nivel técnico y, aun así, fallar para muchas personas. En esta charla veremos cómo algunos de los mayores problemas de UX y accesibilidad nacen en el propio diseño y se escalan a través de los Design Systems.</p>
+              <p>Hablaremos de esos bugs invisibles que no detecta QA, pero que impiden usar un producto con normalidad. Porque si alguien no puede usarlo, no funciona.</p>
+            </div>
+          </article>
+
+          <article class="dfe-card" aria-labelledby="programa-card-1815">
+            <p class="dfe-card__time">18:15</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1815" class="govuk-heading-m">Una web más a la medida de cada usuario: lo que promete WAI-ADAPT</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/alberto-pedrero.jpeg" alt="Retrato de Alberto Pedrero Esteban" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/apedreroes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Alberto Pedrero Esteban <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>WAI-ADAPT es una propuesta del W3C - todavía en estado de borrador - que facilitará la transformación de la interfaz de usuario, pasando de un diseño único a otro más acorde a las necesidades del usuario sin necesidad de programar versiones distintas de una misma web.</p>
+            </div>
+          </article>
+
+          <article class="dfe-card" aria-labelledby="programa-card-1835">
+            <p class="dfe-card__time">18:35</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1835" class="govuk-heading-m">Inteligencia Artificial y accesibilidad: ampliando capacidades, reduciendo barreras</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/oriol-gomez.jpeg" alt="Retrato de Oriol Gomez Sentis" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/ogomez92/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Oriol Gomez Sentis <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>La Inteligencia Artificial ya forma parte de nuestro día a día: nos ayuda a escribir, trabajar o entretenernos. Pero su impacto va mucho más allá. En esta charla exploraremos cómo la IA está transformando la accesibilidad digital, facilitando la interacción de personas con discapacidad con el entorno y la tecnología.</p>
+              <p>Veremos ejemplos reales de cómo las aplicaciones basadas en IA permiten interpretar el entorno visual para personas ciegas o con baja visión, y cómo estas soluciones se integran con lectores de pantalla para ofrecer experiencias más completas, autónomas y significativas.</p>
+              <p>Una sesión práctica para entender cómo la IA no solo automatiza tareas, sino que también contribuye a construir un entorno digital más inclusivo.</p>
+            </div>
+          </article>
+
+          <article class="dfe-card" aria-labelledby="programa-card-1855">
+            <p class="dfe-card__time">18:55</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1855" class="govuk-heading-m">Más allá del validador: criterios para considerar un PDF verdaderamente accesible</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/jose-humanes.jpeg" alt="Retrato de Jose Humanes Elich" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/josehumanes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Jose Humanes Elich <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>Muchos equipos dan por accesible un PDF en cuanto el validador deja de mostrar errores, pero un informe limpio no garantiza que el documento sea realmente usable para personas que dependen de lectores de pantalla u otras tecnologías de apoyo.</p>
+              <p>A partir de ejemplos reales mostraremos casos de PDF que pasan el check pero siguen siendo una barrera, y cerraremos con una mini-guía práctica para definir criterios claros que permitan decir con rigor: este PDF es verdaderamente accesible.</p>
+            </div>
+          </article>
+
+          <article class="dfe-card" aria-labelledby="programa-card-1915">
+            <p class="dfe-card__time">19:15</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1915" class="govuk-heading-m">Reto en directo: evaluando la accesibilidad web paso a paso</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/afra-pascual.jpeg" alt="Retrato de Afra Pascual Almenara" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/afra-pascual-almenara/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Afra Pascual Almenara <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>En esta sesión práctica pondremos a prueba una herramienta de evaluación de accesibilidad web en un reto en directo. Las personas asistentes aprenderán a descargar, instalar y utilizar una solución que permite analizar aspectos clave de accesibilidad en cualquier sitio web.</p>
+              <p>A lo largo de la sesión realizaremos un ejercicio guiado sobre una web real, identificando errores comunes y entendiendo su impacto en la experiencia de las personas usuarias. Veremos cómo detectar barreras, interpretar los resultados y priorizar mejoras.</p>
+              <p>Una oportunidad para adquirir conocimientos prácticos y aplicar la accesibilidad de forma inmediata en proyectos reales.</p>
+            </div>
+          </article>
+
+          <article class="dfe-card" aria-labelledby="programa-card-1945">
+            <p class="dfe-card__time">19:45</p>
+            <div class="dfe-card-container">
+              <h3 id="programa-card-1945" class="govuk-heading-m">Cierre</h3>
+              <div class="dfe-card__speaker">
+                <img class="dfe-card__speaker-image" src="imgs/udl.jpeg" alt="Logotipo de la Universitat de Lleida" width="400" height="400">
+              </div>
+              <span class="dfe-card__label">Ponente</span>
+              <p class="govuk-body-s">Equipo organizador</p>
+              <span class="dfe-card__label">Objetivo</span>
+              <p>Qué puedes hacer mañana para formarte en accesibilidad.</p>
+              <p>Matriculate en una de las Microcredenciales de accesibilidad de la UdL.</p>
+              <p>Recoger ideas clave y abrir próximos pasos para seguir impulsando la accesibilidad digital.</p>
+              <b>Si hoy te hemos abierto los ojos, te guiamos en el camino de aprender más en accesibilidad digital.</b>
+            </div>
+          </article>
         </div>
       </section>
 
