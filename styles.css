@@ -368,10 +368,10 @@ button:focus-visible {
 
 .hero-panel__icon {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: min(100%, 26rem);
+  max-width: 26rem;
   height: auto;
-  margin: 0;
+  margin: 0 auto 1.2rem;
 }
 
 .hero-panel__eyebrow,
