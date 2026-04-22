@@ -16,7 +16,8 @@
   --text-dark: #181818;
   --text-muted: #d4d4d8;
   --text-soft: #57575c;
-  --focus-ring: #ffe566;
+  --focus-ring: #0b57d0;
+  --focus-ring-dark: #ffe566;
   --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.28);
   --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.16);
   --radius-sm: 8px;
@@ -96,7 +97,7 @@ button:focus-visible {
   left: 1rem;
   top: 1rem;
   z-index: 1000;
-  background: var(--focus-ring);
+  background: var(--focus-ring-dark);
   color: #000;
   padding: 0.9rem 1rem;
   border-radius: var(--radius-sm);
@@ -178,6 +179,14 @@ button:focus-visible {
   background: transparent;
   color: #fff;
   text-decoration: underline;
+}
+
+.site-header a:focus-visible,
+.site-header button:focus-visible,
+.section--accent a:focus-visible,
+.section--accent button:focus-visible,
+.site-footer a:focus-visible {
+  outline-color: var(--focus-ring-dark);
 }
 
 .menu-toggle {
@@ -349,11 +358,31 @@ button:focus-visible {
 
 .hero-panel {
   position: relative;
-  padding: 1.5rem;
+  padding: 0;
   border-radius: var(--radius-lg);
   background: #ffffff;
   border: 1px solid rgba(17, 17, 17, 0.1);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.hero-panel__icon {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.hero-panel__eyebrow,
+.hero-panel__meta,
+.hero-panel__topics {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.hero-panel__eyebrow {
+  margin-top: 0.9rem;
 }
 
 .hero-panel__meta {
