@@ -3,1096 +3,168 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Primera jornada sobre el Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida</title>
-  <meta name="description" content="Jornada sobre el Día Mundial de la Concienciación sobre la Accesibilidad Digital en la Universitat de Lleida. Detalles del evento, programa y registro con inscripción previa.">
+  <title>Primera Jornada de Accesibilidad Digital | Universitat de Lleida 2026</title>
+  <meta name="description" content="Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital en la Universitat de Lleida - 2026. Evento online con inscripción gratuita.">
   <link rel="icon" href="imgs/udl.jpeg" type="image/jpeg">
-  <style>
-    :root {
-      --udl-magenta: #7a1f57;
-      --udl-magenta-dark: #5e1742;
-      --udl-black: #111;
-      --udl-slate: #454545;
-      --udl-gray-100: #f2f2f3;
-      --udl-gray-200: #e5e6e8;
-      --udl-gray-300: #d4d6db;
-      --udl-white: #fff;
-      --udl-blue: #2459b4;
-      --focus-light-bg: #0b57d0;
-      --focus-dark-bg: #ffe566;
-      --radius: 10px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      overflow-x: hidden;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      color: #191919;
-      background: var(--udl-gray-100);
-      line-height: 1.5;
-      overflow-wrap: break-word;
-      font-size: 1.4em;
-    }
-
-    a { color: var(--udl-blue); text-underline-offset: 0.18em; }
-
-    a:focus,
-    a:focus-visible,
-    button:focus,
-    button:focus-visible,
-    [tabindex="-1"]:focus {
-      outline: 3px solid var(--focus-light-bg);
-      outline-offset: 2px;
-    }
-
-    .sr-only,
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: 1rem;
-      top: -100px;
-      background: var(--focus-dark-bg);
-      color: #000;
-      border: 2px solid #000;
-      padding: 0.7rem 1rem;
-      font-weight: 700;
-      z-index: 999;
-      text-decoration: none;
-    }
-
-    .skip-link:focus { top: 1rem; }
-
-    .utility-bar a:focus,
-    .utility-bar a:focus-visible,
-    .menu a:focus,
-    .menu a:focus-visible,
-    .hero a:focus,
-    .hero a:focus-visible,
-    .footer a:focus,
-    .footer a:focus-visible,
-    .site-footer a:focus,
-    .site-footer a:focus-visible {
-      outline-color: var(--focus-dark-bg);
-    }
-
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .top-bar {
-      background: var(--udl-magenta);
-      color: var(--udl-white);
-    }
-
-    .utility-bar {
-      background: #6a1b4c;
-      color: var(--udl-white);
-      border-bottom: 1px solid #8b3a69;
-    }
-
-    .utility-bar__inner {
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .utility-bar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    .utility-bar a {
-      color: #fff;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 0 0.65rem;
-      border-radius: 4px;
-      font-size: 1em;
-      font-weight: 600;
-    }
-
-    .utility-bar span {
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 0 0.65rem;
-      border-radius: 4px;
-      font-size: 1em;
-      font-weight: 600;
-    }
-
-    .utility-bar a:hover {
-      background: rgba(255, 255, 255, 0.14);
-    }
-
-    .top-bar__inner {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 1rem;
-      min-height: 82px;
-      padding: 0.7rem 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      min-width: 0;
-    }
-
-    .brand img {
-      /*height: 40px;*/
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      display: block;
-      padding: 1em;
-      margin: 1rem 0 0 1.5em ;
-    }
-
-    .menu-bar {
-      background: #0e0e0e;
-    }
-
-    .menu {
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .menu__toggle {
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-      min-height: 44px;
-      padding: 0.65rem 0.9rem;
-      border: 1px solid #fff;
-      border-radius: 6px;
-      background: transparent;
-      color: #fff;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .menu__toggle-icon {
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-    .menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.7rem 0.8rem;
-      border-radius: 4px;
-      min-height: 42px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .menu a:hover { background: #272727; }
-
-    .hero {
-      background: linear-gradient(rgba(14, 16, 24, 0.78), rgba(14, 16, 24, 0.74)),
-        url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80") center / cover no-repeat;
-      color: var(--udl-white);
-      padding: 2rem 0 1.1rem;
-    }
-
-    .hero__layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.1rem;
-      align-items: stretch;
-    }
-
-    .hero__panel {
-      background: rgba(16, 17, 26, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      padding: 1.35rem 1.35rem 1.1rem;
-      border-radius: 8px;
-      min-height: 100%;
-    }
-
-    .hero__kicker {
-      margin: 0 0 0.45rem;
-      color: #fff;
-      font-size: 1.1em;
-      font-weight: 700;
-    }
-
-    h1 {
-      margin: 0 0 0.55rem;
-      font-size: 3.3em;
-      line-height: 1.02;
-    }
-
-    .hero__lead {
-      margin: 0 0 0.85rem;
-      font-size: 1.1em;
-    }
-
-    .hero__meta {
-      margin: 0 0 0.9rem;
-      display: inline-block;
-      background: var(--udl-magenta);
-      padding: 0.48rem 0.78rem;
-      border-radius: 6px;
-      font-weight: 700;
-    }
-
-    .hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero__button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 800;
-      padding: 0.6rem 1rem;
-      border: 1px solid transparent;
-      color: #111;
-    }
-
-    .hero__button--primary {
-      /*background: #2d58d8;*/
-      background: var(--udl-magenta);
-      color: #fff;
-      border-color: var(--udl-magenta);
-    }
-
-    .hero__button--secondary {
-      background: white;
-      color: #1c1c1c;
-      border-color: grey;
-      /*background: #d8ba45;
-      color: #1c1c1c;
-      border-color: #d8ba45;*/
-    }
-
-    .hero__button:active,
-    .button:active {
-      outline: 3px solid var(--focus-light-bg);
-      outline-offset: 2px;
-      transform: translateY(1px);
-    }
-
-    .hero .hero__button:active {
-      outline-color: var(--focus-dark-bg);
-    }
-
-    .hero__note {
-      margin: 0;
-      font-size: 1em;
-      color: #e8e8e8;
-    }
-
-    .hero__facts {
-      list-style: none;
-      margin: 0.95rem 0 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.65rem;
-    }
-
-    .hero__fact {
-      background: rgba(245, 246, 250, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 8px;
-      padding: 0.72rem 0.75rem;
-    }
-
-    .hero__fact-title {
-      display: block;
-      font-size: 0.9em;
-      text-transform: uppercase;
-      letter-spacing: 0;
-      /*color: #e5d38c;*/
-      color: white;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero__fact-text {
-      margin: 0;
-      color: #f3f3f3;
-      font-size: 1em;
-      font-weight: 600;
-    }
-
-    main { padding: 1.1rem 0 2rem; }
-
-    .section {
-      margin-bottom: 1rem;
-      background: #fff;
-      border: 1px solid var(--udl-gray-300);
-      border-radius: var(--radius);
-      padding: 1rem;
-    }
-
-    h2 {
-      margin: 0 0 0.85rem;
-      font-size: 2em;
-      color: #232323;
-    }
-
-    h3 {
-      margin-top: 0;
-      font-size: 1.5em;
-      line-height: 1.2;
-    }
-
-    .cards {
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid var(--udl-gray-300);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-      min-height: 100%;
-    }
-
-    .card img {
-      width: 100%;
-      height: 125px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card__body { padding: 0.7rem; }
-
-    .card__title {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1f1f1f;
-    }
-
-    .card__text {
-      margin: 0.45rem 0 0;
-      color: #444;
-      font-size: 0.95rem;
-    }
-
-    .program-intro {
-      max-width: 72ch;
-    }
-
-    .dfe-grid-container {
-      display: grid;
-      gap: 1.35rem;
-      margin: 1.25rem 0 1.6rem;
-    }
-
-    .dfe-card {
-      display: grid;
-      border: 1px solid var(--udl-gray-300);
-      border-left: 6px solid var(--udl-magenta);
-      border-radius: 8px;
-      background: #fff;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .dfe-card__time-group {
-      align-items: center;
-      color: var(--udl-magenta);
-      display: flex;
-      gap: 0.45rem;
-      grid-column: 2;
-      justify-content: flex-start;
-      margin-bottom: 0.5rem;
-      padding: 0;
-    }
-
-    .dfe-card__time-group::before {
-      background:
-        linear-gradient(var(--udl-magenta), var(--udl-magenta)) 50% 28% / 2px 34% no-repeat,
-        linear-gradient(var(--udl-magenta), var(--udl-magenta)) 62% 52% / 34% 2px no-repeat;
-      border: 2px solid var(--udl-magenta);
-      border-radius: 50%;
-      content: "";
-      flex: 0 0 auto;
-      height: 1rem;
-      width: 1rem;
-    }
-
-    .dfe-card__time {
-      margin: 0;
-      font-size: 1em;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .dfe-card-container {
-      display: grid;
-      grid-template-columns: 144px minmax(0, 1fr);
-      column-gap: 1.5rem;
-      align-items: start;
-      padding: 1.6rem;
-    }
-
-    .dfe-card__speaker {
-      display: grid;
-      justify-items: center;
-      gap: 0.85rem;
-      grid-column: 1;
-      grid-row: 1 / span 12;
-      margin: 0;
-      text-align: left;
-    }
-
-    .dfe-card__speaker-link {
-      align-items: center;
-      color: var(--udl-blue);
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      max-width: 100%;
-      text-underline-offset: 0.18em;
-    }
-
-    .linkedin-icon {
-      align-items: center;
-      background: #0a66c2;
-      border-radius: 3px;
-      color: #fff;
-      display: inline-flex;
-      font-family: Arial, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 800;
-      height: 1.25rem;
-      justify-content: center;
-      line-height: 1;
-      width: 1.25rem;
-    }
-
-    .dfe-card__speaker-image {
-      width: 112px;
-      height: 112px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-    }
-
-    .dfe-card-container > :not(.dfe-card__speaker) {
-      grid-column: 2;
-    }
-
-    .govuk-heading-m {
-      margin: 0 0 0.65rem;
-      font-size: 1.45em;
-      line-height: 1.25;
-      color: #1f1f1f;
-      overflow-wrap: anywhere;
-    }
-
-    .dfe-card__label {
-      display: block;
-      margin-top: 1.1rem;
-      margin-bottom: 0;
-      font-size: 1em;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .dfe-card-container p,
-    .dfe-card-container ul {
-      margin-top: 0.55rem;
-      margin-bottom: 0;
-    }
-
-    .dfe-card-container p + p {
-      margin-top: 0.8rem;
-    }
-
-    .govuk-body-s {
-      color: #444;
-      font-size: 1em;
-    }
-
-    .agenda {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 0.9rem;
-    }
-
-    .agenda__date {
-      border: 1px solid var(--udl-gray-300);
-      border-radius: 8px;
-      background: #fbfbfc;
-      padding: 0.85rem;
-    }
-
-    .agenda__day {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--udl-magenta);
-      line-height: 1;
-    }
-
-    .agenda__month {
-      margin: 0.25rem 0 0;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .agenda__list {
-      margin: 0;
-      padding-left: 1.2rem;
-    }
-
-    .agenda__list li { margin-bottom: 0.45rem; }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.45fr 1fr;
-      gap: 0.9rem;
-      align-items: start;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .grid-equal {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 0.7rem;
-    }
-
-    .stat {
-      border: 1px solid var(--udl-gray-300);
-      background: #fff;
-      border-radius: 8px;
-      padding: 0.7rem;
-      text-align: center;
-    }
-
-    .stat__value {
-      display: block;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #222;
-    }
-
-    .stat__label {
-      color: #535353;
-      font-size: 0.9rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      background: var(--udl-magenta);
-      border: 1px solid var(--udl-magenta-dark);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
-      padding: 0.55rem 0.9rem;
-    }
-
-    .session-title {
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .small-list,
-    .simple-list {
-      margin: 0;
-      padding-left: 1.2rem;
-    }
-
-    .small-list li,
-    .simple-list li {
-      margin-bottom: 0.45rem;
-    }
-
-    .footer,
-    .site-footer {
-      background: #404040;
-      color: #f0f0f0;
-      margin-top: 1.4rem;
-      padding: 1.3rem 0;
-    }
-
-    .footer__cols {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .site-footer__inner {
-      display: grid;
-      gap: 1rem;
-      padding: 0;
-    }
-
-    .site-footer__title {
-      color: #fff;
-      font-weight: 800;
-      margin: 0;
-    }
-
-    .site-footer__brands {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .site-footer__brand {
-      align-items: center;
-      display: flex;
-      gap: 1rem;
-      min-width: 0;
-    }
-
-    .site-footer__logo {
-      background: #fff;
-      border-radius: 8px;
-      display: block;
-      height: 76px;
-      object-fit: contain;
-      padding: 0.35rem;
-      width: 76px;
-    }
-
-    .site-footer__logo--wide {
-      width: 100px;
-    }
-
-    .site-footer__logo-link {
-      border-radius: 8px;
-      display: inline-flex;
-      flex: 0 0 auto;
-    }
-
-    .site-footer__link {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 0.18em;
-    }
-
-    .site-footer p {
-      margin: 0.25rem 0 0;
-    }
-
-    .footer h2 {
-      color: #fff;
-      font-size: 1.02rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .footer a { color: #f5f5f5; }
-
-    .footer span {
-      color: #f5f5f5;
-    }
-
-    @media (max-width: 980px) {
-      .cards--4,
-      .cards--3,
-      .stats-grid,
-      .split,
-      .grid-equal,
-      .agenda,
-      .hero__layout,
-      .hero__facts,
-      .footer__cols {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .top-bar__inner,
-      .utility-bar__inner,
-      .menu ul,
-      .cards--4,
-      .cards--3,
-      .stats-grid,
-      .split,
-      .grid-equal,
-      .dfe-grid-container,
-      .agenda,
-      .hero__layout,
-      .hero__facts,
-      .footer__cols {
-        grid-template-columns: 1fr;
-      }
-
-      .top-bar__inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .site-footer__inner {
-        align-items: flex-start;
-      }
-
-      .site-footer__brands {
-        grid-template-columns: 1fr;
-      }
-
-      .site-footer__brand {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .utility-bar__inner {
-        justify-content: flex-start;
-      }
-
-      .utility-bar ul {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .utility-bar a {
-        width: 100%;
-      }
-
-      .menu ul {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .menu {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .menu__toggle {
-        display: inline-flex;
-      }
-
-      .menu nav {
-        width: 100%;
-      }
-
-      .menu nav[hidden] {
-        display: none;
-      }
-
-      .menu a { width: 100%; }
-
-      .brand { flex-wrap: wrap; }
-
-      .brand img { /* height: 34px; */}
-
-      h1 {
-        font-size: 1.85em;
-        overflow-wrap: anywhere;
-      }
-
-      h2 {
-        font-size: 1.55em;
-      }
-
-      h3,
-      .govuk-heading-m {
-        font-size: 1.2em;
-      }
-
-      .hero__panel,
-      .section {
-        padding: 0.75rem;
-      }
-
-      .hero__actions {
-        flex-direction: column;
-      }
-
-      .hero__button,
-      .button {
-        width: 100%;
-      }
-
-      .dfe-card,
-      .dfe-card-container {
-        grid-template-columns: 1fr;
-      }
-
-      .dfe-card-container {
-        padding: 1rem;
-      }
-
-      .dfe-card__time {
-        font-size: 1.1em;
-      }
-
-      .dfe-card__speaker,
-      .dfe-card__time-group,
-      .dfe-card-container > :not(.dfe-card__speaker) {
-        grid-column: 1;
-      }
-
-      .dfe-card__speaker {
-        grid-row: auto;
-        justify-items: start;
-        margin-bottom: 0.8rem;
-      }
-
-      .dfe-card__speaker-image {
-        height: 96px;
-        width: 96px;
-      }
-
-      .dfe-card__speaker-link {
-        align-items: flex-start;
-      }
-
-      .site-footer__logo {
-        height: 64px;
-        width: 64px;
-      }
-
-      .site-footer__logo--wide {
-        width: 86px;
-      }
-
-      .hero__fact {
-        min-width: 0;
-      }
-
-    }
-
-    @media (max-width: 480px) {
-      body {
-        font-size: 1.4em;
-      }
-
-      .container {
-        padding: 0 0.75rem;
-      }
-
-      .brand img {
-        margin: 0.75rem 0 0;
-        padding: 0.5rem 0;
-      }
-
-      .hero {
-        padding-top: 1.25rem;
-      }
-
-      h1 {
-        font-size: 1.55em;
-      }
-
-      h2 {
-        font-size: 1.35em;
-      }
-
-      h3,
-      .govuk-heading-m {
-        font-size: 1.1em;
-      }
-
-      .hero__lead,
-      .hero__note {
-        font-size: 1em;
-      }
-
-      .hero__meta,
-      .hero__fact-text,
-      .menu a,
-      .utility-bar span,
-      .button {
-        font-size: 1em;
-      }
-
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
-  <header>
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <div>
-          <!--
-          <ul>
-            <li><span>Campus virtual</span></li>
-            <li><span>Intranet</span></li>
-            <li><span>Biblioteca</span></li>
-            <li><span>Becas y ayudas</span></li>
-            <li><span>Contacto</span></li>
-          </ul>
-          -->
-        </div>
-      </div>
-    </div>
-
-    <div class="top-bar">
-      <div class="container top-bar__inner">
-        <div class="brand">
-          <img src="https://www.udl.cat/export/sites/universitat-lleida/.galleries/imagenes-estructura/logo-udl-cabecera.png_1747225888.png" alt="Logotipo de la Universitat de Lleida y Campus Iberus">
-        <!--<img src="https://www.imatge.udl.cat/export/sites/Imatge/.galleries/imagenes-estructura/logo-campus-iberus-blanco.png" alt="Logo de campus iberus">-->
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-bar">
-      <div class="container menu">
-        <button class="menu__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Botón de menú, abre el menú principal">
-          <span class="menu__toggle-icon" aria-hidden="true">☰</span>
-          <span>Menú</span>
+  <header class="site-header">
+    <div class="site-header__brandbar">
+      <div class="container site-header__brandbar-inner">
+        <a class="brand" href="#top">
+          <img class="brand__logo-lockup" src="https://www.udl.cat/export/sites/universitat-lleida/.galleries/imagenes-estructura/logo-udl-cabecera.png_1747225888.png" alt="Universitat de Lleida y Campus Iberus">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menú
         </button>
-        <nav id="menu-principal" aria-label="Navegación principal">
-          <ul>
-            <li><a href="#detalles">Presentación</a></li>
+
+        <nav id="site-nav" class="site-nav">
+          <ul class="site-nav__list">
+            <li><a href="#top">Presentación</a></li>
             <li><a href="#programa">Programa</a></li>
             <li><a href="#registro">Registro</a></li>
+            <li><a href="#colaboran">Organización</a></li>
           </ul>
         </nav>
       </div>
     </div>
+    <div class="site-header__navband" aria-hidden="true"></div>
   </header>
 
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container">
-      <div class="hero__layout" id="presentacion">
-        <div class="hero__panel">
-          <p class="hero__kicker">I GAAD UdL</p>
-          <h1 id="hero-title">Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital en la Universitat de Lleida - 2026</h1>
+  <main id="main-content">
+    <section id="top" class="hero">
+      <div class="hero__backdrop" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content" data-reveal>
+          <p class="eyebrow">I GAADUdL</p>
+          <h1 class="hero__title">
+            <span>Primera Jornada de</span>
+            <span>Accesibilidad Digital</span>
+            <span class="hero__title-subline">Universitat de Lleida · 2026</span>
+          </h1>
           <p class="hero__lead">Jornada para aprender sobre diseño, desarrollo web, evaluación e inteligencia artificial en el ámbito de la accesibilidad digital.</p>
-          <!--<p class="hero__meta">Jueves 28 de mayo de 2026 · Modalidad online · Acceso a la sesión por Teams con inscripción previa</p> -->
+
           <div class="hero__actions">
-            <a class="hero__button hero__button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">Inscripción <span class="sr-only">(se abre en una pestaña nueva)</span></a>
-            <a class="hero__button hero__button--secondary" href="#programa">Consulta el programa</a>
+
+            <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">
+              Quiero asistir
+              <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+            </a>
+            
+  
+<!--
+            <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">
+              Inscribirme a la Jornada
+              <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+            </a> -->
+            <a class="button button--secondary" href="#programa">Ver programa</a>
           </div>
-          <p class="hero__note">Inscríbete a la jornada y recibe el acceso a la sesión.</p>
-          <ul class="hero__facts">
-            <li class="hero__fact"><span class="hero__fact-title">Fecha</span><p class="hero__fact-text">28 mayo 2026</p></li>
-            <li class="hero__fact"><span class="hero__fact-title">Horario</span><p class="hero__fact-text">17:00 h - 20:00 h</p></li>
-            <li class="hero__fact"><span class="hero__fact-title">Acceso</span><p class="hero__fact-text">Online · Teams</p></li>
-            <li class="hero__fact"><span class="hero__fact-title">Inscripción</span><p class="hero__fact-text">Gratuita</p></li>
+
+          <ul class="hero__highlights">
+            <li>Evento universitario online con acceso por Teams</li>
+            <li>Inscripción gratuita con plazas limitadas</li>
+            <li>Ponencias prácticas sobre accesibilidad digital</li>
           </ul>
         </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="hero-panel">
+            <p class="hero-panel__eyebrow">Edición 2026</p>
+            <div class="hero-panel__meta">
+              <div class="meta-card">
+                <span class="meta-card__label">Fecha</span>
+                <strong>28 mayo 2026</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-card__label">Horario</span>
+                <strong>17:00h - 20:00h</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-card__label">Acceso</span>
+                <strong>Online · Teams</strong>
+              </div>
+              <div class="meta-card">
+                <span class="meta-card__label">Inscripción</span>
+                <strong>Gratuita</strong>
+              </div>
+            </div>
+
+            <div class="hero-panel__topics">
+              <p class="hero-panel__topics-title">Palabras clave</p>
+              <ul class="hero-panel__topics-list">
+                <li>Mitos</li>
+                <li>Personas</li>
+                <li>Diseño</li>
+                <li>Desarrollo</li>
+                <li>Documentos</li>
+                <li>Evaluación</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <main id="contenido-principal" tabindex="-1">
-    <div class="container">
-      <section class="section" aria-labelledby="detalles">
-        <h2 id="detalles">Presentación</h2>
-        <p>En el mes de mayo, se celebra el Día Mundial de la Concienciación sobre la Accesibilidad Digital  <a class="dfe-card__speaker-link" href="https://accessibility.day/" target="_blank" rel="noopener noreferrer">(GAAD) <span class="sr-only">(se abre en una pestaña nueva)</span></a>, y en la  <a class="dfe-card__speaker-link" href="https://accessibility.day/" target="_blank" rel="noopener noreferrer">Universidad de Lleida <span class="sr-only">(se abre en una pestaña nueva)</span></a> crearemos un espacio de encuentro, reflexión y aprendizaje en torno a la accesibilidad digital.
-        </p>  
-        <p>
-          A lo largo del programa abordará de forma muy práctica temas relacionados con discapacidad, diseño digital, desarrollo de webs, documentos accesibles y evaluación e inteligencia artificial, con el objetivo de compartir enfoques, experiencias y herramientas aplicadas a mejorar el acceso de todas las personas.
-        </p>  
-        <p>
-          La participación es gratuita y se realizará en modalidad online. 
-        </p>  
-        <!--<p>La jornada ofrecerá un formato práctico con demostraciones, casos reales y criterios aplicables de accesibilidad digital para el entorno universitario.</p>
-      -->
-      </section>
+    <!-- <section id="datos" class="section section--light">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-heading__eyebrow">Datos clave</p>
+          <h2>Todo lo importante, claro desde el primer momento</h2>
+          <p>Qué es, cuándo ocurre, cómo se sigue y qué necesitas para participar.</p>
+        </div>
 
-      <section id="programa" class="section" aria-labelledby="programa-title">
-        <h2 id="programa-title">Programa de la jornada</h2>
-        <p>Consulta las sesiones previstas, la participación propuesta y el objetivo de cada bloque.</p>
+        <div class="info-grid">
+          <article class="info-card" data-reveal>
+            <h3>Fecha</h3>
+            <p class="info-card__value">28 mayo 2026</p>
+            <p>Sesión única en formato online.</p>
+          </article>
+          <article class="info-card" data-reveal>
+            <h3>Horario</h3>
+            <p class="info-card__value">17:00h - 20:00h</p>
+            <p>Tres horas de contenidos breves y aplicables.</p>
+          </article>
+          <article class="info-card" data-reveal>
+            <h3>Acceso</h3>
+            <p class="info-card__value">Online · Teams</p>
+            <p>Recibirás el enlace tras completar la inscripción.</p>
+          </article>
+          <article class="info-card" data-reveal>
+            <h3>Inscripción</h3>
+            <p class="info-card__value">Gratuita</p>
+            <p>Registro previo necesario para reservar plaza.</p>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="programa" class="section section--dark">
+      <div class="container">
+        <div class="section-heading section-heading--dark" data-reveal>
+          <p class="section-heading__eyebrow">I GAADUdL</p>
+          <h2 id="programa-title">Programa de la jornada</h2>
+          <p class="program-intro">Consulta las sesiones previstas, la participación propuesta y el objetivo de cada bloque.</p>
+        </div>
+
         <div class="dfe-grid-container">
-          <article class="dfe-card" aria-labelledby="programa-card-1700">
+          <article class="dfe-card" aria-labelledby="programa-card-1700" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia1" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">17:00 h.</p></div>
-            
-              <h3 id="programa-card-1700" class="govuk-heading-m" aria-describedby="hora-ponencia1">Bienvenida - La accesibilidad no es opcional</h3>
+              <p id="hora-ponencia1" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T17:00">17:00 h.</time></p>
+              <h3 id="programa-card-1700" class="govuk-heading-m" aria-labelledby="programa-card-1700 hora-ponencia1">Bienvenida - La accesibilidad no es opcional</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/damia-vericat.jpg" alt="" width="400" height="400">
                 <img class="dfe-card__speaker-image" src="imgs/nuria-camps.jpg" alt="" width="400" height="400">
               </div>
-              <!--
-              <h4 class="dfe-card__label">Contenido</h4>
-              <ul>
-                <li>Presentación de la jornada.</li>
-                <li>
-                  Proyectos de accesibilidad de la UdL.
-                </li>
-                <li>
-                  Microcredenciales en accesibilidad digital de la UdL.
-                </li>
-              </ul>
-              -->
               <h4 class="dfe-card__label">Ponentes</h4>
               <ul class="simple-list">
                 <li>
-                  <a class="dfe-card__speaker-link" href="https://www.udl.cat/ca/organs/vicerectors/vgptgas/" target="_blank" rel="noopener noreferrer">Damià Vericat Querol <span class="sr-only">(se abre en una pestaña nueva)</span></a>, Vicerector de Gobernanza y PTGAS.
+                  <a class="dfe-card__speaker-link" href="https://www.udl.cat/ca/organs/vicerectors/vgptgas/" target="_blank" rel="noopener noreferrer">Damià Vericat Querol <span class="visually-hidden">(se abre en una pestaña nueva)</span></a>, Vicerector de Gobernanza y PTGAS.
                 </li>
                 <li>
-                  <a class="dfe-card__speaker-link" href="https://www.udl.cat/ca/organs/vicerectors/vcsic/" target="_blank" rel="noopener noreferrer">Núria Camps Mirabet <span class="sr-only">(se abre en una pestaña nueva)</span></a>, Vicerectora de Compromiso Social, Igualdad y Cooperación.
+                  <a class="dfe-card__speaker-link" href="https://www.udl.cat/ca/organs/vicerectors/vcsic/" target="_blank" rel="noopener noreferrer">Núria Camps Mirabet <span class="visually-hidden">(se abre en una pestaña nueva)</span></a>, Vicerectora de Compromiso Social, Igualdad y Cooperación.
                 </li>
               </ul>
               <h4 class="dfe-card__label">Contenido</h4>
@@ -1100,68 +172,63 @@
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1735">
+          <article class="dfe-card" aria-labelledby="programa-card-1735" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia2" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">17:35 h.</p></div>
-            
-              <h3 id="programa-card-1735" class="govuk-heading-m" aria-describedby="hora-ponencia2">Desmontando mitos de la accesibilidad digital</h3>
+              <p id="hora-ponencia2" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T17:35">17:35 h.</time></p>
+              <h3 id="programa-card-1735" class="govuk-heading-m" aria-labelledby="programa-card-1735 hora-ponencia2">Desmontando mitos de la accesibilidad digital</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/mario-almonte.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/marioalmonte/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Mario Almonte Moreno <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/marioalmonte/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Mario Almonte Moreno <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
               <p>Hay ideas sobre accesibilidad digital que damos por ciertas sin cuestionarlas. Algunas vienen del sentido común, otras de una lectura estricta de los estándares. Y a veces, esas suposiciones acaban creando nuevas barreras.</p>
-              <p>En esta sesión interactiva plantearemos preguntas al público para poner a prueba cuatro creencias frecuentes, con ejemplos visuales y datos reales. Además, conoceremos una herramienta gratuita que nos ayudará a tomar mejores decisiones de diseño accesible.</p>             
-               <p>Una invitación a cuestionar lo que creemos saber antes de aplicarlo.</p>
+              <p>En esta sesión interactiva plantearemos preguntas al público para poner a prueba cuatro creencias frecuentes, con ejemplos visuales y datos reales. Además, conoceremos una herramienta gratuita que nos ayudará a tomar mejores decisiones de diseño accesible.</p>
+              <p>Una invitación a cuestionar lo que creemos saber antes de aplicarlo.</p>
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1755">
+          <article class="dfe-card" aria-labelledby="programa-card-1755" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia3" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">17:55 h.</p></div>
-            
-              <h3 id="programa-card-1755" class="govuk-heading-m" aria-describedby="hora-ponencia3">El mayor bug de tu interfaz no está en el código</h3>
+              <p id="hora-ponencia3" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T17:55">17:55 h.</time></p>
+              <h3 id="programa-card-1755" class="govuk-heading-m" aria-labelledby="programa-card-1755 hora-ponencia3">El mayor bug de tu interfaz no está en el código</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/xavi-cardet.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/uxavi-cardet/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Xavi Cardet <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/uxavi-cardet/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Xavi Cardet <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
               <p>Una interfaz puede funcionar perfectamente a nivel técnico y, aun así, fallar para muchas personas.</p>
-                <p>En esta charla veremos cómo algunos de los mayores problemas de UX y accesibilidad nacen en el propio diseño y se escalan a través de los Design Systems.</p>
+              <p>En esta charla veremos cómo algunos de los mayores problemas de UX y accesibilidad nacen en el propio diseño y se escalan a través de los Design Systems.</p>
               <p>Hablaremos de esos bugs invisibles que no detecta QA, pero que impiden usar un producto con normalidad.</p>
               <p>Porque si alguien no puede usarlo, no funciona.</p>
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1815">
+          <article class="dfe-card" aria-labelledby="programa-card-1815" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia4" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">18:15 h.</p></div>
-            
-              <h3 id="programa-card-1815" class="govuk-heading-m" aria-describedby="hora-ponencia4">Una web más a la medida de cada usuario: lo que promete 
-                  WAI-ADAPT de W3C</h3>
+              <p id="hora-ponencia4" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T18:15">18:15 h.</time></p>
+              <h3 id="programa-card-1815" class="govuk-heading-m" aria-labelledby="programa-card-1815 hora-ponencia4">Una web más a la medida de cada usuario: lo que promete WAI-ADAPT de W3C</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/alberto-pedrero.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/apedreroes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Alberto Pedrero Esteban <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/apedreroes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Alberto Pedrero Esteban <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
-              <p><a class="dfe-card__speaker-link" href="https://www.w3.org/WAI/adapt/" target="_blank" rel="noopener noreferrer">WAI-ADAPT <span class="sr-only">(se abre en una pestaña nueva)</span></a> es una propuesta del W3C - todavía en estado de borrador - que facilitará la transformación de la interfaz de usuario, pasando de un diseño único a otro más acorde a las necesidades del usuario sin necesidad de programar versiones distintas de una misma web.</p>
+              <p><a class="dfe-card__speaker-link" href="https://www.w3.org/WAI/adapt/" target="_blank" rel="noopener noreferrer">WAI-ADAPT <span class="visually-hidden">(se abre en una pestaña nueva)</span></a> es una propuesta del W3C - todavía en estado de borrador - que facilitará la transformación de la interfaz de usuario, pasando de un diseño único a otro más acorde a las necesidades del usuario sin necesidad de programar versiones distintas de una misma web.</p>
               <p>El futuro del diseño web pasa por interfaces que se adaptan a las personas, no al revés.</p>
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1835">
+          <article class="dfe-card" aria-labelledby="programa-card-1835" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia5" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">18:35 h.</p></div>
-            
-              <h3 id="programa-card-1835" class="govuk-heading-m" aria-describedby="hora-ponencia5">Inteligencia Artificial y accesibilidad: ampliando capacidades, reduciendo barreras</h3>
+              <p id="hora-ponencia5" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T18:35">18:35 h.</time></p>
+              <h3 id="programa-card-1835" class="govuk-heading-m" aria-labelledby="programa-card-1835 hora-ponencia5">Inteligencia Artificial y accesibilidad: ampliando capacidades, reduciendo barreras</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/oriol-gomez.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/ogomez92/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Oriol Gomez Sentis <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/ogomez92/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Oriol Gomez Sentis <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
               <p>La Inteligencia Artificial ya forma parte de nuestro día a día: nos ayuda a escribir, trabajar o entretenernos. Pero su impacto va mucho más allá. En esta charla exploraremos cómo la IA está transformando la accesibilidad digital, facilitando la interacción de personas con discapacidad con el entorno y la tecnología.</p>
               <p>Veremos ejemplos reales de cómo las aplicaciones basadas en IA permiten interpretar el entorno visual para personas ciegas o con baja visión, y cómo estas soluciones se integran con lectores de pantalla para ofrecer experiencias más completas, autónomas y significativas.</p>
@@ -1169,131 +236,137 @@
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1855">
+          <article class="dfe-card" aria-labelledby="programa-card-1855" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia6" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">18:55 h.</p></div>
-            
-              <h3 id="programa-card-1855" class="govuk-heading-m" aria-describedby="hora-ponencia6">Más allá del validador: criterios para considerar un PDF verdaderamente accesible</h3>
+              <p id="hora-ponencia6" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T18:55">18:55 h.</time></p>
+              <h3 id="programa-card-1855" class="govuk-heading-m" aria-labelledby="programa-card-1855 hora-ponencia6">Más allá del validador: criterios para considerar un PDF verdaderamente accesible</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/jose-humanes.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/josehumanes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Jose Humanes Elich <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/josehumanes/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Jose Humanes Elich <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
               <p>Muchos equipos dan por accesible un documento PDF en cuanto el validador deja de mostrar errores, pero un informe limpio no garantiza que el documento sea realmente usable para personas que dependen de lectores de pantalla u otras tecnologías de apoyo.</p>
-              <p>A partir de ejemplos reales mostraremos casos de documentos PDF que pasan el check pero siguen siendo una barrera. </p>
+              <p>A partir de ejemplos reales mostraremos casos de documentos PDF que pasan el check pero siguen siendo una barrera.</p>
               <p>Cerraremos con una mini-guía práctica para definir criterios claros que permitan decir con rigor: este PDF es verdaderamente accesible.</p>
             </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1915">
+          <article class="dfe-card" aria-labelledby="programa-card-1915" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia7" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">19:15 h.</p></div>
-            
-              <h3 id="programa-card-1915" class="govuk-heading-m" aria-describedby="hora-ponencia7">Reto en directo: evaluación de la accesibilidad web fácil   </h3>
+              <p id="hora-ponencia7" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T19:15">19:15 h.</time></p>
+              <h3 id="programa-card-1915" class="govuk-heading-m" aria-labelledby="programa-card-1915 hora-ponencia7">Reto en directo: evaluación de la accesibilidad web fácil</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/afra-pascual.jpeg" alt="" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
-              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/afra-pascual-almenara/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Afra Pascual Almenara <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
+              <p class="govuk-body-s"><a class="dfe-card__speaker-link" href="https://www.linkedin.com/in/afra-pascual-almenara/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span>Afra Pascual Almenara <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></p>
               <h4 class="dfe-card__label">Contenido</h4>
               <p>En esta sesión práctica pondremos a prueba una herramienta de evaluación de accesibilidad propia.</p>
-                 
-              <p>Realizaremos un ejercicio guiado sobre una web siguiendo los <a class="dfe-card__speaker-link" href="https://www.w3.org/WAI/test-evaluate/easy-checks/" target="_blank" rel="noopener noreferrer">Easy Checks de W3C<span class="sr-only">(se abre en una pestaña nueva)</span></a>. Identificaremos errores comunes en muchos sitios web y entenderemos su impacto en la experiencia de las personas usuarias.</p>
+              <p>Realizaremos un ejercicio guiado sobre una web siguiendo los <a class="dfe-card__speaker-link" href="https://www.w3.org/WAI/test-evaluate/easy-checks/" target="_blank" rel="noopener noreferrer">Easy Checks de W3C <span class="visually-hidden">(se abre en una pestaña nueva)</span></a>. Identificaremos errores comunes en muchos sitios web y entenderemos su impacto en la experiencia de las personas usuarias.</p>
               <p>Una oportunidad para adquirir conocimientos prácticos y aplicar la accesibilidad de forma inmediata en proyectos reales.</p>
-           </div>
+            </div>
           </article>
 
-          <article class="dfe-card" aria-labelledby="programa-card-1945">
+          <article class="dfe-card" aria-labelledby="programa-card-1945" data-reveal>
             <div class="dfe-card-container">
-              <div id="hora-ponencia8" class="dfe-card__time-group"><span class="visually-hidden">Comienza a las </span><p class="dfe-card__time" aria-hidden="true">19:45 h.</p></div>
-            
-              <h3 id="programa-card-1945" class="govuk-heading-m" aria-describedby="hora-ponencia8">Cierre</h3>
+              <p id="hora-ponencia8" class="dfe-card__time-group"><span class="visually-hidden">Hora de inicio: </span><time datetime="2026-05-28T19:45">19:45 h.</time></p>
+              <h3 id="programa-card-1945" class="govuk-heading-m" aria-labelledby="programa-card-1945 hora-ponencia8">Cierre</h3>
               <div class="dfe-card__speaker">
                 <img class="dfe-card__speaker-image" src="imgs/udl.jpeg" alt="Logotipo de la Universitat de Lleida" width="400" height="400">
               </div>
               <h4 class="dfe-card__label">Ponente</h4>
               <p class="govuk-body-s">Equipo organizador</p>
               <h4 class="dfe-card__label">Contenido</h4>
-             <!-- <p>Qué puedes hacer mañana para formarte en accesibilidad.</p>
-              <p>Matriculate en una de las Microcredenciales de accesibilidad de la UdL.</p>-->
               <p>Recoger ideas clave y abrir próximos pasos para seguir impulsando la accesibilidad digital.</p>
               <b>Si hoy has descubierto algo nuevo, te guiamos en el camino para aprender más sobre accesibilidad digital</b>
             </div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="registro" class="section" aria-labelledby="registro-title">
-        <h2 id="registro-title">Registro</h2>
-        <p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">Abrir formulario de inscripción <span class="sr-only">(se abre en una pestaña nueva)</span></a></p>
-        <p>Asiste a la jornada del día 28 de mayo de 2026.</p>
-        <ul class="simple-list">
-          <li>Modalidad: online.</li>
-          <li>Plataforma: Microsoft Teams.</li>
-          <li>Requisito: inscripción previa.</li>
-          <li>El enlace de acceso se enviará a las personas inscritas.</li>
-        </ul>
-      </section>
-    </div>
+    <section id="registro" class="section section--accent">
+      <div class="container cta-panel" data-reveal>
+        <div class="cta-panel__content">
+          <p class="section-heading__eyebrow">Inscripción</p>
+          <h2>Reserva tu plaza para la primera edición del GAADUdL</h2>
+          <p>Una jornada universitaria para compartir conocimiento, ejemplos prácticos y enfoques actuales sobre accesibilidad digital.</p>
+        </div>
+
+        <div class="cta-panel__actions">
+          <p class="cta-panel__note">Acceso online por Teams tras la confirmación del registro.</p>
+          <a class="button button--primary button--large" href="https://docs.google.com/forms/d/e/1FAIpQLSciwU3qkPsldOzQtyGm69Jm1RcRMKRgeHEhga_idh_gdgJNEg/viewform" target="_blank" rel="noopener noreferrer">
+            Inscripcióna a la Jornada
+            <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+          </a>
+          <p class="cta-panel__subnote">Solo te llevará 1 minuto</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="colaboran" class="section section--light">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-heading__eyebrow">Organización</p>
+          <h2>Impulso institucional y colaboración académica</h2>
+          <p>Organizaciones y grupos vinculados a docencia, investigación e innovación en accesibilidad e interacción persona-computadora.</p>
+        </div>
+
+        <div class="partners-group" data-reveal>
+          <h3 class="partners-group__title">Organizan</h3>
+          <div class="partners-grid">
+            <article class="partner-card" aria-labelledby="programa-card-2001" >
+              <img class="partner-card__logo" src="imgs/udl.jpeg" alt="Universitat de Lleida">
+              <div>
+                <h4 id="programa-card-2001"><a href="https://www.udl.cat/ca/" target="_blank" rel="noopener noreferrer">Universitat de Lleida <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></h4>
+                <p>Universidad organizadora de la jornada.</p>
+              </div>
+            </article>
+
+            
+            <article class="partner-card"  aria-labelledby="programa-card-2002" >
+              <img class="partner-card__logo partner-card__logo--wide" src="imgs/griho.jpeg" alt="GRIHO">
+              <div>
+                <h4 id="programa-card-2002"><a href="https://www.griho.udl.cat/en/" target="_blank" rel="noopener noreferrer">GRIHO <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></h4>
+                <p>Grupo de Investigación sobre Interacción Persona-Computadora e Integración de Datos.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="partners-group" data-reveal>
+          <h3 class="partners-group__title">Colaboran</h3>
+          <div class="partners-grid">
+            <article class="partner-card"  aria-labelledby="programa-card-2003" >
+              <img class="partner-card__logo" src="imgs/aipo.jpg" alt="AIPO">
+              <div>
+                <h4 id="programa-card-2003"><a href="https://aipo.es/" target="_blank" rel="noopener noreferrer">AIPO <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></h4>
+                <p>Asociación vinculada a profesionales e investigación en experiencia de usuario y diseño digital.</p>
+              </div>
+            </article>
+
+            <article class="partner-card"  aria-labelledby="programa-card-2004" >
+              <img class="partner-card__logo partner-card__logo--wide" src="imgs/hci-collab.png" alt="HCI Collab">
+              <div>
+                <h4 id="programa-card-2004"><a href="https://hci-collab.uxartetic.com/" target="_blank" rel="noopener noreferrer">HCI Collab <span class="visually-hidden">(se abre en una pestaña nueva)</span></a></h4>
+                <p>Colaboración orientada a investigación y práctica en interacción persona-computadora.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p class="site-footer__title">Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital</p>
-      <div class="site-footer__brands">
-        <div class="site-footer__brand">
-          <a class="site-footer__logo-link" href="https://www.udl.cat/" target="_blank" rel="noopener noreferrer">
-            <img class="site-footer__logo" src="imgs/udl.jpeg" alt="Logotipo de la Universitat de Lleida" width="220" height="220">
-            <span class="sr-only">(se abre en una pestaña nueva)</span>
-          </a>
-          <div>
-            <a class="site-footer__link" href="https://www.udl.cat/" target="_blank" rel="noopener noreferrer">Universitat de Lleida <span class="sr-only">(se abre en una pestaña nueva)</span></a>
-          </div>
-        </div>
-        <div class="site-footer__brand">
-          <a class="site-footer__logo-link" href="https://www.griho.udl.cat/en/" target="_blank" rel="noopener noreferrer">
-            <img class="site-footer__logo site-footer__logo--wide" src="imgs/griho.jpeg" alt="Logotipo del grupo GRIHO" width="335" height="255">
-            <span class="sr-only">(se abre en una pestaña nueva)</span>
-          </a>
-          <div>
-            <a class="site-footer__link" href="https://www.griho.udl.cat/en/" target="_blank" rel="noopener noreferrer">GRIHO <span class="sr-only">(se abre en una pestaña nueva)</span></a>
-            <p>Grupo de Investigación sobre Interacción Persona-Computadora e Integración de Datos</p>
-          </div>
-        </div>
-      </div>
+      <p class="site-footer__title">Primera jornada de celebración del Día Mundial de la Concienciación de la Accesibilidad Digital en la Universitat de Lleida - 2026</p>
+      <p class="site-footer__meta">28 mayo 2026 · Online · Teams · Inscripción gratuita</p>
     </div>
   </footer>
-  <script>
-    const menuButton = document.querySelector(".menu__toggle");
-    const menuNav = document.querySelector("#menu-principal");
 
-    if (menuButton && menuNav) {
-      const mobileQuery = window.matchMedia("(max-width: 700px)");
-
-      const syncMenuState = () => {
-        if (mobileQuery.matches) {
-          menuNav.hidden = menuButton.getAttribute("aria-expanded") !== "true";
-        } else {
-          menuNav.hidden = false;
-        }
-      };
-
-      menuButton.addEventListener("click", () => {
-        const nextExpanded = menuButton.getAttribute("aria-expanded") !== "true";
-        menuButton.setAttribute("aria-expanded", String(nextExpanded));
-        syncMenuState();
-      });
-
-      mobileQuery.addEventListener("change", () => {
-        if (!mobileQuery.matches) {
-          menuButton.setAttribute("aria-expanded", "false");
-        }
-        syncMenuState();
-      });
-
-      syncMenuState();
-    }
-  </script>
+  <!-- a11y: la página prioriza semántica nativa, contraste alto, foco visible, navegación por teclado y animación reducida cuando el usuario así lo indica -->
+  <script src="script.js"></script>
 </body>
 </html>
