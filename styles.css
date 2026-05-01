@@ -109,11 +109,8 @@ button:focus-visible {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  position: static;
   background: transparent;
-  backdrop-filter: blur(12px);
 }
 
 .site-header__brandbar {
@@ -125,6 +122,7 @@ button:focus-visible {
 .site-header__brandbar-inner {
   min-height: 7.75rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
@@ -145,6 +143,8 @@ button:focus-visible {
   align-items: center;
   text-decoration: none;
   color: var(--white);
+  flex: 1 1 18rem;
+  min-width: 0;
 }
 
 .brand__logo-lockup {
@@ -153,9 +153,17 @@ button:focus-visible {
   display: block;
 }
 
+.site-nav {
+  flex: 1 0 100%;
+  min-width: 0;
+  width: 100%;
+}
+
 .site-nav__list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.9rem;
   list-style: none;
   margin: 0;
@@ -190,7 +198,9 @@ button:focus-visible {
 }
 
 .menu-toggle {
-  display: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
   padding: 0.65rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -199,6 +209,23 @@ button:focus-visible {
   color: #fff;
   font: inherit;
   font-weight: 700;
+}
+
+@media (min-width: 761px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .site-nav {
+    flex: 0 1 auto;
+    width: auto;
+  }
+
+  .site-nav__list {
+    justify-content: flex-end;
+  }
 }
 
 .hero {
@@ -852,32 +879,33 @@ button:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .site-header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
   .site-header__brandbar-inner {
     min-height: 6.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding-block: 0.75rem;
+  }
+
+  .brand {
+    flex: 1 1 12rem;
+  }
+
+  .brand__logo-lockup {
+    max-width: 100%;
   }
 
   .menu-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0 0 auto;
   }
 
   .site-nav {
-    position: absolute;
-    top: calc(100% - 2.25rem);
-    right: 1rem;
-    left: 1rem;
+    flex: 1 0 100%;
+    width: 100%;
     padding: 0.75rem;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-sm);
     background: rgba(17, 17, 17, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: var(--shadow-lg);
   }
 
   .site-nav[hidden] {
@@ -951,6 +979,20 @@ button:focus-visible {
 
   .dfe-card__speaker-link {
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header__brandbar-inner {
+    justify-content: stretch;
+  }
+
+  .brand {
+    flex-basis: 100%;
+  }
+
+  .menu-toggle {
+    width: 100%;
   }
 }
 
